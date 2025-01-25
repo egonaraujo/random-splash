@@ -31,7 +31,14 @@ gravity_scale = 0.0
 linear_damp = 0.3
 script = ExtResource("1_qmsfi")
 
+<<<<<<< Updated upstream
 [node name="Circle" type="Sprite2D" parent="."]
+=======
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oyuue")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+>>>>>>> Stashed changes
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_ffl02")
 

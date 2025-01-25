@@ -119,7 +119,7 @@ rotation = 0.0923413
 shape = SubResource("CapsuleShape2D_aviu0")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Background/StaticBody2D"]
-position = Vector2(504, 960)
+position = Vector2(520, 964)
 rotation = 1.39149
 shape = SubResource("CapsuleShape2D_aviu0")
 
