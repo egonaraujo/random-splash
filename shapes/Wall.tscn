@@ -1,15 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0i72i6dao5gr"]
 
-[ext_resource type="Texture2D" uid="uid://vxl1n4wdbu8q" path="res://shapes/rounded-square.png" id="1_sa376"]
+[ext_resource type="Texture2D" uid="uid://br8ktkbsn7q74" path="res://sprites/tilemap/Pedras.png" id="1_74tng"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_md5ev"]
-size = Vector2(26.7816, 42.3632)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1tt2"]
+size = Vector2(20.642, 14.9271)
 
 [node name="Wall" type="Node2D"]
-
-[node name="Rounded-square" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_sa376")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(0.514527, 0.228679)
@@ -17,6 +13,13 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(21.2238, -15.3036)
 rotation = 3.14159
 scale = Vector2(66.111, -94.038)
-shape = SubResource("RectangleShape2D_md5ev")
+shape = SubResource("RectangleShape2D_c1tt2")
+
+[node name="Pedras" type="Sprite2D" parent="."]
+position = Vector2(5, -6)
+scale = Vector2(2, 2)
+texture = ExtResource("1_74tng")

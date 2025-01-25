@@ -1,215 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://c365s5l5ix1wo"]
+[gd_scene load_steps=11 format=3 uid="uid://c365s5l5ix1wo"]
 
 [ext_resource type="PackedScene" uid="uid://d0i72i6dao5gr" path="res://shapes/Wall.tscn" id="1_oguch"]
+[ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_sb0gj"]
+[ext_resource type="PackedScene" uid="uid://b8qa78d8s7051" path="res://scenes/MainGame/Background/BackgroundBubblesTilemap.tscn" id="2_fsmr0"]
 [ext_resource type="PackedScene" uid="uid://dd2wmljmibo22" path="res://scenes/MainGame/player.tscn" id="2_ifi61"]
 [ext_resource type="PackedScene" uid="uid://c8ynp2rpf5vf6" path="res://scenes/MainGame/PushField.tscn" id="3_plq0r"]
 [ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="5_fyf6i"]
+[ext_resource type="PackedScene" uid="uid://bjtbhmfj1y2nc" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXUp.tscn" id="5_ol1gx"]
 [ext_resource type="PackedScene" uid="uid://cpknuiwl6y4xe" path="res://sprites/Props/Espinhos/Prop_Spike1.tscn" id="5_u4fog"]
+[ext_resource type="PackedScene" uid="uid://dol27qu546uu1" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXDown.tscn" id="6_c4etj"]
 [ext_resource type="PackedScene" uid="uid://d321rp6s3vjpi" path="res://sprites/Props/Espinhos/Prop_Spike2.tscn" id="6_doqua"]
 
 [node name="GameLayout" type="Node2D"]
+script = ExtResource("1_sb0gj")
+
+[node name="BackgroundBubblesTilemap" parent="." instance=ExtResource("2_fsmr0")]
+z_index = -10
+position = Vector2(7, 4339)
 
 [node name="Map" type="Node" parent="."]
-
-[node name="Wall" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(-25, 1282)
-rotation = 0.416277
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall2" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(-223, 978)
-rotation = 1.65596
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall3" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(36, 699)
-rotation = 3.20644
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall7" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(699, 475)
-rotation = 3.15058
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall8" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(327, 461)
-rotation = 1.65207
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall9" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1049, 365)
-rotation = 1.53303
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall10" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1312, 795)
-rotation = 0.465654
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall11" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1637, 1043)
-rotation = 1.13689
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall12" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1656, 1515)
-rotation = 1.78056
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall4" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(351, 1357)
-rotation = 3.18263
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall5" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(910, 1345)
-rotation = 3.39177
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall14" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1097, 1641)
-rotation = 4.88478
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall15" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1052, 2154)
-rotation = 4.61782
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall17" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1025, 2709)
-rotation = 4.91213
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall18" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(690, 3043)
-rotation = 6.03517
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall19" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(493, 3345)
-rotation = 5.04984
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall20" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(669, 3683)
-rotation = 3.40712
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall21" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1216, 3712)
-rotation = 3.02159
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall22" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1786, 3669)
-rotation = 3.12213
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall25" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(2168, 3583)
-rotation = 2.58704
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall26" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(2723, 3426)
-rotation = 3.29664
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall31" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(3272, 3588)
-rotation = 3.5627
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall32" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(3580, 3491)
-rotation = 2.28284
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall33" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(4043, 3240)
-rotation = 3.0968
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall34" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(4542, 3099)
-rotation = 2.81767
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall36" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(4995, 2767)
-rotation = 2.17078
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall37" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(5417, 2428)
-rotation = 2.74948
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall40" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(5900, 2224)
-rotation = 2.74948
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall41" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(6240, 1831)
-rotation = 1.83034
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall42" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(6361, 1310)
-rotation = 1.83034
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall44" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(6622, 807)
-rotation = 2.28454
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall45" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(7134, 583)
-rotation = 3.12274
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall48" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(7745, 673)
-rotation = 3.46074
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall49" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(8218, 985)
-rotation = 3.94618
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall50" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(8464, 1477)
-rotation = 4.61864
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall55" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(8557, 2093)
-rotation = 4.49997
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall56" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(8856, 2588)
-rotation = 3.79052
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall58" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(9189, 2964)
-rotation = 4.14362
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall59" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(9679, 3254)
-rotation = 3.30434
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall61" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(10263, 3297)
-rotation = 3.10923
-scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall62" parent="Map" instance=ExtResource("1_oguch")]
 position = Vector2(10919, 3290)
@@ -361,6 +170,86 @@ position = Vector2(22524, 4985)
 rotation = 2.96945
 scale = Vector2(0.751815, 0.185213)
 
+[node name="Wall116" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(23112, 4883)
+rotation = 2.96945
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall117" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(23610, 4646)
+rotation = 2.2885
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall118" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24097, 4341)
+rotation = 2.7541
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall119" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24505, 3945)
+rotation = 1.69953
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall120" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24720, 3436)
+rotation = 2.25047
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall121" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24924, 2893)
+rotation = 1.45597
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall122" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24913, 2316)
+rotation = 1.72585
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall123" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24902, 1717)
+rotation = 1.3971
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall124" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24676, 1242)
+rotation = 0.986816
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall125" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24597, 722)
+rotation = 2.02268
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall128" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(24903, 292.999)
+rotation = 2.3616
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall113" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(22303, 2156)
+rotation = 2.96945
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall114" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(22795, 1842)
+rotation = 2.17174
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall115" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(22916, 1314)
+rotation = 1.18693
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall126" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(22893, 759)
+rotation = 1.9282
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall127" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(22837, 260.999)
+rotation = 0.801753
+scale = Vector2(0.751815, 0.185213)
+
 [node name="Wall96" parent="Map" instance=ExtResource("1_oguch")]
 position = Vector2(19047, 2305)
 rotation = 4.19082
@@ -374,6 +263,21 @@ scale = Vector2(0.751815, 0.185213)
 [node name="Wall102" parent="Map" instance=ExtResource("1_oguch")]
 position = Vector2(20064, 2645)
 rotation = 2.75602
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall110" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(20566, 2339)
+rotation = 2.40538
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall111" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(21061, 2101)
+rotation = 3.08727
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall112" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(21707, 2124)
+rotation = 3.33547
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall93" parent="Map" instance=ExtResource("1_oguch")]
@@ -451,51 +355,6 @@ position = Vector2(15566, 285)
 rotation = 0.789812
 scale = Vector2(0.751815, 0.185213)
 
-[node name="Wall23" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(2102, 2930)
-rotation = 3.12213
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall27" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(2731, 2890)
-rotation = 3.07871
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall28" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(3215, 2719)
-rotation = 2.23829
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall29" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(3608, 2315)
-rotation = 2.48101
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall30" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(4086, 2058)
-rotation = 2.82837
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall35" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(4643, 1722)
-rotation = 2.22783
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall38" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(5239, 695)
-rotation = 1.78183
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall43" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(5518, 340)
-rotation = 2.79185
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall46" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(6009, 52.0002)
-rotation = 2.39554
-scale = Vector2(0.751815, 0.185213)
-
 [node name="Wall47" parent="Map" instance=ExtResource("1_oguch")]
 position = Vector2(8423, 19.9999)
 rotation = 0.856719
@@ -531,26 +390,6 @@ position = Vector2(10066, 2381)
 rotation = 0.28513
 scale = Vector2(0.751815, 0.185213)
 
-[node name="Wall39" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(5013, 1292)
-rotation = 2.22783
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall16" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1622, 2064)
-rotation = 4.61782
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall24" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1733, 2617)
-rotation = 4.43323
-scale = Vector2(0.751815, 0.185213)
-
-[node name="Wall6" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(699, 1477)
-rotation = 1.55729
-scale = Vector2(0.751815, 0.185213)
-
 [node name="Sprite2D" parent="Map" instance=ExtResource("3_plq0r")]
 position = Vector2(9025, 1124)
 rotation = -0.164309
@@ -575,172 +414,627 @@ rotation = -0.0102374
 scale = Vector2(8.24378, 1.48542)
 direction = Vector2(0, 50)
 
+[node name="Sprite2D5" parent="Map" instance=ExtResource("3_plq0r")]
+position = Vector2(21125, 2287)
+rotation = -0.15605
+scale = Vector2(4.96005, 1.95144)
+direction = Vector2(0, -1)
+force = 60.0
+
+[node name="Sprite2D6" parent="Map" instance=ExtResource("3_plq0r")]
+position = Vector2(21235, 2992)
+rotation = -0.15605
+scale = Vector2(4.96005, 1.95144)
+direction = Vector2(0, -1)
+force = 30.0
+
+[node name="Sprite2D7" parent="Map" instance=ExtResource("3_plq0r")]
+position = Vector2(21340, 3677)
+rotation = -0.15605
+scale = Vector2(4.96005, 1.95144)
+direction = Vector2(0, -1)
+
+[node name="PushFieldVfx" parent="Map" instance=ExtResource("5_ol1gx")]
+position = Vector2(1370, 3644)
+rotation = -2.9783
+
+[node name="PushFieldVfx2" parent="Map" instance=ExtResource("5_ol1gx")]
+position = Vector2(1162, 3636)
+
+[node name="PushFieldVfx3" parent="Map" instance=ExtResource("5_ol1gx")]
+position = Vector2(1562, 3650)
+
+[node name="PushFieldVfx4" parent="Map" instance=ExtResource("6_c4etj")]
+position = Vector2(9246, 747)
+rotation = 0.522022
+
+[node name="PushFieldVfx5" parent="Map" instance=ExtResource("6_c4etj")]
+position = Vector2(9075, 742)
+rotation = 0.522022
+
+[node name="PushFieldVfx6" parent="Map" instance=ExtResource("6_c4etj")]
+position = Vector2(8838, 687)
+rotation = 0.522022
+
 [node name="Player" parent="." instance=ExtResource("2_ifi61")]
-position = Vector2(12446, 2672)
+position = Vector2(356, 897)
 rotation = -0.0209571
 
-[node name="Sprite2D" parent="." instance=ExtResource("3_plq0r")]
-position = Vector2(1340, 3577)
+[node name="Props" type="Node" parent="."]
+
+[node name="Sprite2D" parent="Props" instance=ExtResource("3_plq0r")]
+visible = false
+position = Vector2(1344, 3595)
 rotation = 3.14159
 scale = Vector2(1.42086, 0.325284)
 direction = Vector2(0, -1)
 force = 100.0
 
-[node name="Sprite2D2" parent="." instance=ExtResource("3_plq0r")]
+[node name="Sprite2D2" parent="Props" instance=ExtResource("3_plq0r")]
+visible = false
 position = Vector2(1340, 3472)
 rotation = 3.14159
 scale = Vector2(1.42086, 0.325284)
 direction = Vector2(0, -1)
 force = 30.0
 
-[node name="Sprite2D3" parent="." instance=ExtResource("3_plq0r")]
+[node name="Sprite2D3" parent="Props" instance=ExtResource("3_plq0r")]
+visible = false
 position = Vector2(1340, 3301)
 rotation = 3.14159
 scale = Vector2(1.42086, 0.605284)
 direction = Vector2(0, -1)
 force = 20.0
 
-[node name="Sprite2D5" parent="." instance=ExtResource("3_plq0r")]
+[node name="Sprite2D5" parent="Props" instance=ExtResource("3_plq0r")]
 position = Vector2(7227, -244)
 scale = Vector2(5.28682, 1.02088)
 direction = Vector2(0, 1)
-force = 100.0
+force = 40.0
 
-[node name="Sprite2D4" parent="." instance=ExtResource("3_plq0r")]
+[node name="Sprite2D7" parent="Props" instance=ExtResource("3_plq0r")]
+position = Vector2(7227, -333)
+scale = Vector2(5.28682, 0.590518)
+direction = Vector2(0, 1)
+force = 60.0
+
+[node name="Sprite2D6" parent="Props" instance=ExtResource("3_plq0r")]
+position = Vector2(7227, 112)
+scale = Vector2(5.28682, 1.02088)
+direction = Vector2(0, 1)
+force = 0.0
+
+[node name="Sprite2D4" parent="Props" instance=ExtResource("3_plq0r")]
+visible = false
 position = Vector2(1340, 2987)
 rotation = 3.14159
 scale = Vector2(1.42086, 1.12528)
 direction = Vector2(0, -1)
 force = 4.0
 
-[node name="PeixeEstranho" parent="." instance=ExtResource("5_fyf6i")]
+[node name="PeixeEstranho" parent="Props" instance=ExtResource("5_fyf6i")]
 position = Vector2(11840, 2857)
 rotation = 3.11842
 scale = Vector2(1.21818, 1.13088)
 maxDistance = 400.0
 
-[node name="PeixeEstranho2" parent="." instance=ExtResource("5_fyf6i")]
+[node name="PeixeEstranho2" parent="Props" instance=ExtResource("5_fyf6i")]
 position = Vector2(19765, 3302)
 rotation = 3.11842
 scale = Vector2(1.21818, 1.13088)
 speed = 400.0
 maxDistance = 1000.0
 
-[node name="PeixeEstranho3" parent="." instance=ExtResource("5_fyf6i")]
+[node name="PeixeEstranho3" parent="Props" instance=ExtResource("5_fyf6i")]
 position = Vector2(19908, 3949)
 rotation = 3.11842
 scale = Vector2(1.21818, 1.13088)
 speed = 200.0
 maxDistance = 600.0
 
-[node name="PeixeEstranho4" parent="." instance=ExtResource("5_fyf6i")]
+[node name="PeixeEstranho4" parent="Props" instance=ExtResource("5_fyf6i")]
 position = Vector2(22484, 4231)
 scale = Vector2(1.21818, 1.13088)
 speed = 200.0
 maxDistance = 600.0
 
-[node name="PeixeEstranho5" parent="." instance=ExtResource("5_fyf6i")]
+[node name="PeixeEstranho5" parent="Props" instance=ExtResource("5_fyf6i")]
 position = Vector2(22767, 3463)
 scale = Vector2(1.21818, 1.13088)
 speed = 200.0
 maxDistance = 600.0
 
-[node name="PeixeEstranho6" parent="." instance=ExtResource("5_fyf6i")]
+[node name="PeixeEstranho6" parent="Props" instance=ExtResource("5_fyf6i")]
 position = Vector2(21207, 4521)
 scale = Vector2(1.21818, 1.13088)
 speed = 200.0
 maxDistance = 600.0
 
-[node name="PropSpike1" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike1" parent="Props" instance=ExtResource("5_u4fog")]
+z_index = -1
 position = Vector2(3558, 3268)
 rotation = -0.789411
 
-[node name="PropSpike2" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike2" parent="Props" instance=ExtResource("5_u4fog")]
+z_index = -1
 position = Vector2(3422, 3430)
 rotation = -0.789411
 
-[node name="PropSpike3" parent="." instance=ExtResource("5_u4fog")]
-position = Vector2(4474, 2075)
-rotation = 2.60513
+[node name="PropSpike3" parent="Props" instance=ExtResource("5_u4fog")]
+z_index = -1
+position = Vector2(4391, 1945)
+rotation = 2.67549
 
-[node name="PropSpike4" parent="." instance=ExtResource("5_u4fog")]
-position = Vector2(4676, 1953)
-rotation = 2.35973
+[node name="PropSpike4" parent="Props" instance=ExtResource("5_u4fog")]
+z_index = -1
+position = Vector2(4569, 1802)
+rotation = 2.26539
 
-[node name="PropSpike5" parent="." instance=ExtResource("6_doqua")]
+[node name="PropSpike5" parent="Props" instance=ExtResource("6_doqua")]
+z_index = -1
 position = Vector2(3825, 3176)
 rotation = -0.0898917
 
-[node name="PropSpike6" parent="." instance=ExtResource("6_doqua")]
-position = Vector2(4880, 1630)
+[node name="PropSpike6" parent="Props" instance=ExtResource("6_doqua")]
+z_index = -1
+position = Vector2(4713, 1473)
 rotation = 2.21285
+scale = Vector2(1.0174, 1.07672)
 
-[node name="PropSpike7" parent="." instance=ExtResource("6_doqua")]
-position = Vector2(6095, 1893)
-rotation = 5.03746
+[node name="PropSpike7" parent="Props" instance=ExtResource("6_doqua")]
+z_index = -1
+position = Vector2(5506, 1246)
+rotation = -1.38673
 
-[node name="PropSpike8" parent="." instance=ExtResource("6_doqua")]
-position = Vector2(5827, 2163)
-rotation = 5.7909
+[node name="PropSpike8" parent="Props" instance=ExtResource("6_doqua")]
+z_index = -1
+position = Vector2(5388, 1615)
+rotation = -1.28585
 
-[node name="PropSpike9" parent="." instance=ExtResource("6_doqua")]
-position = Vector2(9262, 2873)
-rotation = 0.943698
+[node name="PropSpike9" parent="Props" instance=ExtResource("6_doqua")]
+z_index = -1
+position = Vector2(9130, 2801)
+rotation = 0.862355
 
-[node name="PropSpike10" parent="." instance=ExtResource("6_doqua")]
-position = Vector2(9551, 3124)
-rotation = 0.193379
+[node name="PropSpike10" parent="Props" instance=ExtResource("6_doqua")]
+z_index = -1
+position = Vector2(9401, 3145)
+rotation = 1.03452
 
-[node name="PropSpike11" parent="." instance=ExtResource("6_doqua")]
-position = Vector2(9983, 3181)
+[node name="PropSpike11" parent="Props" instance=ExtResource("6_doqua")]
+z_index = -1
+position = Vector2(9753, 3359)
 rotation = -0.0191978
 
-[node name="PropSpike12" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike12" parent="Props" instance=ExtResource("5_u4fog")]
+z_index = -1
 position = Vector2(9802, 2443)
 rotation = -2.87293
 
-[node name="PropSpike13" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike13" parent="Props" instance=ExtResource("5_u4fog")]
+z_index = -1
 position = Vector2(10004, 2503)
 rotation = -2.5683
 
-[node name="PropSpike14" parent="." instance=ExtResource("6_doqua")]
+[node name="PropSpike14" parent="Props" instance=ExtResource("6_doqua")]
+z_index = -1
 position = Vector2(10418, 2580)
 rotation = -3.00007
 
-[node name="PropSpike24" parent="." instance=ExtResource("6_doqua")]
+[node name="PropSpike24" parent="Props" instance=ExtResource("6_doqua")]
 position = Vector2(12955, 3032)
 rotation = -2.53951
 
-[node name="PropSpike16" parent="." instance=ExtResource("6_doqua")]
+[node name="PropSpike16" parent="Props" instance=ExtResource("6_doqua")]
 position = Vector2(13581, 3072)
 rotation = -3.13513
 
-[node name="PropSpike17" parent="." instance=ExtResource("6_doqua")]
+[node name="PropSpike17" parent="Props" instance=ExtResource("6_doqua")]
 position = Vector2(14023, 3084)
 rotation = -3.13513
 
-[node name="PropSpike18" parent="." instance=ExtResource("6_doqua")]
+[node name="PropSpike18" parent="Props" instance=ExtResource("6_doqua")]
 position = Vector2(13743, 2841)
-rotation = -6.21921
+rotation = 0.0639752
 
-[node name="PropSpike19" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike19" parent="Props" instance=ExtResource("5_u4fog")]
 position = Vector2(14110, 2911)
 rotation = 0.60545
 
-[node name="PropSpike20" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike20" parent="Props" instance=ExtResource("5_u4fog")]
 position = Vector2(12919, 2660)
 
-[node name="PropSpike25" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike25" parent="Props" instance=ExtResource("5_u4fog")]
 position = Vector2(13236, 3118)
 rotation = 2.82659
 
-[node name="PropSpike23" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike23" parent="Props" instance=ExtResource("5_u4fog")]
 position = Vector2(12742, 2801)
 rotation = -1.01449
 
-[node name="PropSpike21" parent="." instance=ExtResource("6_doqua")]
+[node name="PropSpike21" parent="Props" instance=ExtResource("6_doqua")]
 position = Vector2(13197, 2679)
 
-[node name="PropSpike22" parent="." instance=ExtResource("5_u4fog")]
+[node name="PropSpike22" parent="Props" instance=ExtResource("5_u4fog")]
 position = Vector2(13534, 2754)
 rotation = 0.752533
+
+[node name="Wall" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(366, 1244)
+rotation = 0.0395146
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall11" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1069, 1670)
+rotation = -1.23798
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall18" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1001, 2038)
+rotation = -1.48701
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall19" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(909, 2414)
+rotation = -1.06258
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall20" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(817, 2762)
+rotation = -1.69481
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall21" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(861, 3130)
+rotation = -1.57394
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall22" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(921, 3510)
+rotation = -1.79725
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall24" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1595, 3777)
+rotation = -3.30221
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall25" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1844, 3611)
+rotation = -4.39177
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall26" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(2073, 3420)
+rotation = -3.44193
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall27" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(2405, 3400)
+rotation = -2.99419
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall41" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(2738, 3431)
+rotation = -2.99419
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall43" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3038, 3585)
+rotation = -2.62027
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall44" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3355, 3629)
+rotation = -3.40852
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall45" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3589, 3422)
+rotation = -3.8689
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall46" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3832, 3295)
+rotation = -3.20379
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall47" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4135, 3227)
+rotation = -3.56639
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall48" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4310, 2992)
+rotation = -4.49104
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall49" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4322, 2662)
+rotation = -4.93381
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall50" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4376, 2349)
+rotation = -4.12301
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall51" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4612, 2113)
+rotation = -3.66016
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall52" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4902, 1973)
+rotation = -3.31121
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall53" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5245, 1945)
+rotation = -3.29213
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall54" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5405, 1714)
+rotation = -4.5161
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall55" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5510, 1433)
+rotation = -4.19627
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall56" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5582, 1105)
+rotation = -4.69796
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall57" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5756, 869)
+rotation = -3.68925
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall58" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(6074, 781)
+rotation = -3.15048
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall59" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(6386, 750)
+rotation = -3.33977
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall60" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(6721, 725)
+rotation = -3.14915
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall61" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(6998, 776)
+rotation = -2.80573
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall62" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(7268, 940)
+rotation = -2.81684
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall63" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(7575, 986)
+rotation = -3.29674
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall64" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(7880, 955)
+rotation = -3.27693
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall65" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(8142, 1053)
+rotation = -2.38451
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall66" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(8290, 1328)
+rotation = -1.87663
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall67" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(8426, 1611)
+rotation = -2.28726
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall68" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(8590, 1893)
+rotation = -1.78749
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall69" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(8660, 2219)
+rotation = -1.82005
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall70" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(8834, 2521)
+rotation = -2.33402
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall71" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(9005, 2782)
+rotation = -2.23836
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall72" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(9204, 2987)
+rotation = -2.46676
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall73" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(9364, 3249)
+rotation = -1.95058
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall74" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(9613, 3411)
+rotation = -2.78857
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall75" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(9939, 3415)
+rotation = -3.35059
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall76" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(10263, 3353)
+rotation = -3.35059
+scale = Vector2(0.441836, 0.37161)
+
+[node name="Wall23" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1201, 3777)
+rotation = -2.93608
+scale = Vector2(0.62564, 0.5)
+
+[node name="Wall2" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(57, 1042)
+rotation = 1.15606
+scale = Vector2(0.589333, 0.5)
+
+[node name="Wall4" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(-25, 622)
+rotation = 1.39464
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall5" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(-206, 471)
+rotation = 3.03239
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall6" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(857, 497)
+rotation = 3.19845
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall7" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1242, 597)
+rotation = 3.52165
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall8" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1489, 854)
+rotation = 4.14677
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall9" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1627, 1206)
+rotation = 4.58696
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall12" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1723, 1572)
+rotation = 4.34275
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall13" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1728, 1890)
+rotation = 4.98489
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall14" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1680, 2226)
+rotation = 4.64168
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall15" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(1779, 2589)
+rotation = 4.13647
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall16" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(2028, 2765)
+rotation = 6.14586
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall17" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(2394, 2773)
+rotation = 6.50887
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall28" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(2773, 2873)
+rotation = 6.50887
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall29" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3008, 2871)
+rotation = 5.76658
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall30" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3309, 2657)
+rotation = 5.58552
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall31" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3597, 2428)
+rotation = 5.73989
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall32" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3756, 2242)
+rotation = 4.89383
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall33" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(3913, 2024)
+rotation = 5.90114
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall34" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4271, 1863)
+rotation = 5.90114
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall35" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4503, 1653)
+rotation = 5.01825
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall36" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4656, 1336)
+rotation = 5.57542
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall37" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(4906, 1092)
+rotation = 5.47108
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall38" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5079, 755)
+rotation = 5.1319
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall39" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5316, 529)
+rotation = 6.14592
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall40" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5595, 360)
+rotation = 5.54065
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall42" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(5938, 239)
+rotation = 9.43508
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall3" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(659, 1091)
+rotation = 1.78813
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall10" parent="." instance=ExtResource("1_oguch")]
+position = Vector2(919, 1310)
+rotation = 0.494643
+scale = Vector2(0.683416, 0.542228)

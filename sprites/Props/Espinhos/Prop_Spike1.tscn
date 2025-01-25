@@ -13,7 +13,7 @@ visibility_layer = 32768
 texture = ExtResource("1_7f8vg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 32768
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 33)

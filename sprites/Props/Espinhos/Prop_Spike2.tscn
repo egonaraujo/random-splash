@@ -12,7 +12,7 @@ position = Vector2(33, 11)
 texture = ExtResource("1_7mm6w")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 32768
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(40, 14)

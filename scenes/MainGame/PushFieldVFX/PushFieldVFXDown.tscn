@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://dol27qu546uu1"]
+
+[ext_resource type="Texture2D" uid="uid://clbnjll3epv0j" path="res://scenes/MainGame/Sprites/Bolha.png" id="1_u224s"]
+
+[sub_resource type="Gradient" id="Gradient_qwlbh"]
+offsets = PackedFloat32Array(0, 0.585106, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.939716, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0ht1r"]
+gradient = SubResource("Gradient_qwlbh")
+
+[sub_resource type="Curve" id="Curve_hh1ps"]
+max_value = 3.0
+_data = [Vector2(0.0032258, 2.34665), 0.0, 0.0, 0, 0, Vector2(0.712903, 1.14046), -4.83514, -4.83514, 0, 0, Vector2(1, 0.0367267), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_q3dna"]
+curve = SubResource("Curve_hh1ps")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_85xja"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 90.63
+direction = Vector3(0, 10, 0)
+spread = 150.443
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+radial_velocity_min = -15.0
+radial_velocity_max = 15.0
+gravity = Vector3(0, 196, 0)
+linear_accel_min = -11.21
+linear_accel_max = 47.41
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = -2.23517e-06
+scale_min = 0.05
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_q3dna")
+color_ramp = SubResource("GradientTexture1D_0ht1r")
+turbulence_enabled = true
+turbulence_noise_strength = 0.66
+turbulence_noise_scale = 0.007
+turbulence_noise_speed = Vector3(0, 10, 0)
+turbulence_influence_min = 0.015
+turbulence_influence_max = 0.107
+
+[node name="PushFieldVfx" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_85xja")
+texture = ExtResource("1_u224s")
+lifetime = 5.0
