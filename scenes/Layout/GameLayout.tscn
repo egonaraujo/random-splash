@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://c365s5l5ix1wo"]
+[gd_scene load_steps=12 format=3 uid="uid://c365s5l5ix1wo"]
 
 [ext_resource type="PackedScene" uid="uid://d0i72i6dao5gr" path="res://shapes/Wall.tscn" id="1_oguch"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_sb0gj"]
 [ext_resource type="PackedScene" uid="uid://b8qa78d8s7051" path="res://scenes/MainGame/Background/BackgroundBubblesTilemap.tscn" id="2_fsmr0"]
 [ext_resource type="PackedScene" uid="uid://dd2wmljmibo22" path="res://scenes/MainGame/player.tscn" id="2_ifi61"]
 [ext_resource type="PackedScene" uid="uid://c8ynp2rpf5vf6" path="res://scenes/MainGame/PushField.tscn" id="3_plq0r"]
-[ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="5_fyf6i"]
+[ext_resource type="PackedScene" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="5_fyf6i"]
 [ext_resource type="PackedScene" uid="uid://bjtbhmfj1y2nc" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXUp.tscn" id="5_ol1gx"]
 [ext_resource type="PackedScene" uid="uid://cpknuiwl6y4xe" path="res://sprites/Props/Espinhos/Prop_Spike1.tscn" id="5_u4fog"]
 [ext_resource type="PackedScene" uid="uid://dol27qu546uu1" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXDown.tscn" id="6_c4etj"]
 [ext_resource type="PackedScene" uid="uid://d321rp6s3vjpi" path="res://sprites/Props/Espinhos/Prop_Spike2.tscn" id="6_doqua"]
+[ext_resource type="Script" path="res://scenes/MainGame/player.gd" id="8_celug"]
 
 [node name="GameLayout" type="Node2D"]
 script = ExtResource("1_sb0gj")
@@ -459,6 +460,8 @@ rotation = 0.522022
 [node name="Player" parent="." instance=ExtResource("2_ifi61")]
 position = Vector2(356, 897)
 rotation = -0.0209571
+collision_mask = 30
+script = ExtResource("8_celug")
 
 [node name="Props" type="Node" parent="."]
 
