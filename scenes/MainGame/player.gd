@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+class_name Player
+
 @export_group("Click Input")
 @export var power : float = 100
 @export var minRadius : float = 50
@@ -13,7 +15,10 @@ extends RigidBody2D
 @onready var originalSpriteScale:Vector2 = $Sprite.scale
 @onready var originalColliderScale:Vector2 = $CollisionShape2D.scale
 
+var invincibilityTimer:float = 0
 var bubbleRotationAnimation:float = 0.12
+
+func IsInvincible() -> bool: return invincibilityTimer > 0
 
 #Signals
 signal player_died()
@@ -23,6 +28,7 @@ func _ready() -> void:
 	max_contacts_reported = 1
 
 func _physics_process(delta: float) -> void:
+	processPowerups(delta)
 	processOxygen(delta)
 	processInput()
 	$Sprite.rotate(bubbleRotationAnimation*delta)
@@ -31,7 +37,15 @@ func _physics_process(delta: float) -> void:
 		bubbleRotationAnimation *= -1 #change rotation
 		
 
+func processPowerups(delta: float) -> void:
+	if IsInvincible():
+		invincibilityTimer -= delta
+		if !IsInvincible():
+			$Sprite.self_modulate = Color(1.0,1.0,1.0,1.0)
+
 func processOxygen(delta:float) -> void:
+	if IsInvincible():
+		return
 	oxygen -= oxygenLossPerSec * delta
 	if oxygen <= 0:
 		player_died.emit()
@@ -57,35 +71,25 @@ func processInput() -> void:
 		var boost = direction.normalized() * power * boostStrength
 		apply_central_force(boost)
 
-func _draw() -> void:
-	return #comment to get gizmos
-	draw_circle(get_global_mouse_position(), maxRadius, Color.DARK_BLUE)
-	draw_circle(get_global_mouse_position(), minRadius, Color.AQUA)
-
-
 func _on_body_entered(body: Node) -> void:
-	var physicsBody:PhysicsBody2D = null
-	if body is PhysicsBody2D:
-		physicsBody = body
-	else:
-		for child in body.get_children():
-			if child is PhysicsBody2D:
-				physicsBody = child
-				break
-	
+	var physicsBody:PhysicsBody2D = body
+
 	match physicsBody.collision_layer:
 		Enums.CollisionLayers.Walls:
+			if IsInvincible():
+				return
 			oxygen -= oxygenLossPerImpact
 
 		Enums.CollisionLayers.Killer:
+			if IsInvincible():
+				return
 			oxygen = 0
-
-		Enums.CollisionLayers.Powerup:
-			if physicsBody.has_method("activatePowerup"):
-				physicsBody.activatePowerup(self)
-
 	processOxygen(0)
 
-func gainOxygen(amount :float) -> void:
-	oxygen += amount
+func gainOxygen(amount: float) -> void:
+	oxygen = clamp(oxygen + amount,-10, 100)	
 	processOxygen(0)
+
+func grantInvincibility(time: float) -> void:
+	invincibilityTimer = time
+	$Sprite.self_modulate = Color(0.36,0.36,0.36,1.0)

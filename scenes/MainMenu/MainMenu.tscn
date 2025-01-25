@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhcwrdljag3ty"]
+[gd_scene load_steps=6 format=3 uid="uid://dhcwrdljag3ty"]
 
 [ext_resource type="Texture2D" uid="uid://c7dl8yypj3df4" path="res://shapes/square.png" id="1_bp64k"]
 [ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="1_kq0tu"]
-[ext_resource type="PackedScene" uid="uid://8bt1c0poof2o" path="res://UI/StandardButton.tscn" id="2_ew6ds"]
+[ext_resource type="Texture2D" uid="uid://b004vpnxwkb0q" path="res://UI/StartButton.png" id="3_r18os"]
+[ext_resource type="Texture2D" uid="uid://5t65fchlekmu" path="res://UI/MusicOnOff.png" id="4_i1m3e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bcmav"]
 font_size = 50
@@ -15,34 +16,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_kq0tu")
 
 [node name="Background" type="Sprite2D" parent="."]
 self_modulate = Color(0.230272, 0.635105, 0.704183, 1)
-position = Vector2(648.5, 379.5)
-scale = Vector2(0.719306, 0.426898)
+position = Vector2(960, 532)
+scale = Vector2(1.07217, 0.611059)
 texture = ExtResource("1_bp64k")
-
-[node name="ComecarButton" parent="." instance=ExtResource("2_ew6ds")]
-layout_mode = 1
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -8.0
-offset_bottom = 81.0
-grow_vertical = 2
-
-[node name="Label" parent="ComecarButton/CenterContainer" index="0"]
-text = "Começar"
-
-[node name="SairButton" parent="." instance=ExtResource("2_ew6ds")]
-layout_mode = 1
-offset_top = 445.0
-offset_bottom = 534.0
-
-[node name="Label" parent="SairButton/CenterContainer" index="0"]
-text = "Sair
-"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -57,8 +39,30 @@ text = "Bubble Capy
 "
 label_settings = SubResource("LabelSettings_bcmav")
 
-[connection signal="pressed" from="ComecarButton" to="." method="_on_comecar_button_pressed"]
-[connection signal="pressed" from="SairButton" to="." method="_on_sair_button_pressed"]
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 312.0
+offset_bottom = 1080.0
+grow_horizontal = 2
 
-[editable path="ComecarButton"]
-[editable path="SairButton"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 63
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="CenterContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_r18os")
+texture_pressed = ExtResource("3_r18os")
+stretch_mode = 3
+
+[node name="MusicButton" type="TextureButton" parent="CenterContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_i1m3e")
+texture_pressed = ExtResource("4_i1m3e")
+stretch_mode = 3
+
+[connection signal="button_down" from="CenterContainer2/VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_down" from="CenterContainer2/VBoxContainer/MusicButton" to="." method="_on_music_button_button_down"]

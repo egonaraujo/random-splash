@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dd2wmljmibo22"]
 
-[ext_resource type="Script" path="res://scenes/MainGame/input_force.gd" id="1_qmsfi"]
+[ext_resource type="Script" path="res://scenes/MainGame/player.gd" id="1_qmsfi"]
 [ext_resource type="Texture2D" uid="uid://clbnjll3epv0j" path="res://scenes/MainGame/Sprites/Bolha.png" id="2_rbkmd"]
 [ext_resource type="Texture2D" uid="uid://cevxarn72scd7" path="res://scenes/MainGame/Sprites/Bolhas.png" id="3_p3e72"]
 [ext_resource type="Texture2D" uid="uid://bjqbu5piwp661" path="res://scenes/MainGame/Sprites/Capivara.png" id="4_gmbs1"]
