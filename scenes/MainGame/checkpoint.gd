@@ -1,4 +1,5 @@
 extends Area2D
+class_name Checkpoint
 
 signal player_entered_checkpoint
 

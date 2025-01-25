@@ -4,19 +4,18 @@
 [ext_resource type="Script" path="res://scenes/MainGame/invincibility.gd" id="2_8ama8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0nc5d"]
-radius = 664.451
+radius = 26.0768
 
-[node name="Invincibility" type="Sprite2D"]
-self_modulate = Color(0.732247, 0.712416, 0, 1)
-position = Vector2(1161, 659)
-scale = Vector2(0.0392456, 0.0392456)
-texture = ExtResource("1_2n27e")
-
-[node name="StaticBody2D" type="Area2D" parent="."]
+[node name="StaticBody2D" type="Area2D"]
 collision_layer = 8
 script = ExtResource("2_8ama8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0nc5d")
 
-[connection signal="body_entered" from="StaticBody2D" to="StaticBody2D" method="_on_body_entered"]
+[node name="Invincibility" type="Sprite2D" parent="."]
+self_modulate = Color(0.732247, 0.712416, 0, 1)
+scale = Vector2(0.0392456, 0.0392456)
+texture = ExtResource("1_2n27e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

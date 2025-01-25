@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdavaijubluxx"]
+[gd_scene load_steps=13 format=3 uid="uid://bdavaijubluxx"]
 
 [ext_resource type="Texture2D" uid="uid://c7dl8yypj3df4" path="res://shapes/square.png" id="1_h88lo"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_hfcji"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="7_fjqr2"]
 [ext_resource type="PackedScene" uid="uid://dorm1h4qxeub0" path="res://scenes/MainGame/Obstacles/espinho.tscn" id="8_32pr5"]
 [ext_resource type="PackedScene" uid="uid://pjs7qa53qkjt" path="res://scenes/MainGame/Powerups/invincibility.tscn" id="9_x78ee"]
-[ext_resource type="Script" path="res://scenes/MainGame/checkpoint.gd" id="10_rys7l"]
+[ext_resource type="PackedScene" uid="uid://dyn03xcy6xi02" path="res://scenes/MainGame/checkpoint.tscn" id="10_3u2ke"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnil1"]
 radius = 237.034
@@ -18,16 +18,13 @@ radius = 237.034
 radius = 201.864
 height = 981.193
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6k1w"]
-size = Vector2(100, 100)
-
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_hfcji")
 
 [node name="Background" type="Sprite2D" parent="."]
 self_modulate = Color(0.455725, 0.586048, 0.665996, 1)
 z_index = -1
-position = Vector2(633, 2)
+position = Vector2(626, -36)
 texture = ExtResource("1_h88lo")
 
 [node name="Circle" type="Sprite2D" parent="Background"]
@@ -154,14 +151,12 @@ position = Vector2(1155, 279)
 scale = Vector2(0.0484301, 0.0484301)
 
 [node name="Invincibility" parent="." instance=ExtResource("9_x78ee")]
+position = Vector2(1129, 612)
 
-[node name="Checkpoint" type="Area2D" parent="."]
-position = Vector2(377, -143)
-script = ExtResource("10_rys7l")
+[node name="Checkpoint" parent="." instance=ExtResource("10_3u2ke")]
+position = Vector2(555, -176)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]
-shape = SubResource("RectangleShape2D_b6k1w")
-metadata/_edit_lock_ = true
+[node name="Checkpoint2" parent="." instance=ExtResource("10_3u2ke")]
+position = Vector2(842, 657)
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
-[connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]

@@ -17,6 +17,7 @@ class_name Player
 
 var invincibilityTimer:float = 0
 var bubbleRotationAnimation:float = 0.12
+var queue_reset: bool = false
 
 func IsInvincible() -> bool: return invincibilityTimer > 0
 
@@ -93,3 +94,18 @@ func gainOxygen(amount: float) -> void:
 func grantInvincibility(time: float) -> void:
 	invincibilityTimer = time
 	$Sprite.self_modulate = Color(0.36,0.36,0.36,1.0)
+
+func reset(global_pos:Vector2) -> void:
+	oxygen = 100
+	reset_physics_interpolation()
+	invincibilityTimer = 0
+	processOxygen(0)
+	global_position = global_pos
+	queue_reset = true
+	
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if queue_reset:
+		state.linear_velocity = Vector2.ZERO
+		state.angular_velocity = 0
+		state.transform = transform
+		queue_reset = false
