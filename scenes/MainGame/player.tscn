@@ -6,6 +6,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cn5lh"]
 friction = 0.15
+bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oyuue"]
 radius = 44.0114
@@ -30,20 +31,24 @@ physics_material_override = SubResource("PhysicsMaterial_cn5lh")
 gravity_scale = 0.0
 linear_damp = 0.3
 script = ExtResource("1_qmsfi")
+oxygenLossPerSec = 1.2
 
-[node name="Circle" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_oyuue")
+
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_ffl02")
 
-[node name="Camera2D" type="Camera2D" parent="Circle"]
+[node name="Camera2D" type="Camera2D" parent="Sprite"]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_oyuue")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 5
 process_material = SubResource("ParticleProcessMaterial_6ibcy")
 texture = ExtResource("2_y0r7o")
 lifetime = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
