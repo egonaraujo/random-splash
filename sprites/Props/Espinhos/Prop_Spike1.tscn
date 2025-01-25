@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpknuiwl6y4xe"]
+
+[ext_resource type="Texture2D" uid="uid://cxu72uv2shcat" path="res://sprites/Props/Espinhos/Vidros_Lixosos.png" id="1_7f8vg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_183vo"]
+size = Vector2(202, 84)
+
+[node name="PropSpike1" type="Node2D"]
+light_mask = 32768
+visibility_layer = 32768
+
+[node name="VidrosLixosos" type="Sprite2D" parent="."]
+texture = ExtResource("1_7f8vg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 33)
+shape = SubResource("RectangleShape2D_183vo")

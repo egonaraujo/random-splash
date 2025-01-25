@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8sh14d8yt7q6"
-path="res://.godot/imported/Cave Tileset.png-5d40682a2fb1be247ecf50b25ebf2fa7.ctex"
+uid="uid://bsl4ula0kc5o8"
+path="res://.godot/imported/Vidros Lixosos 2.png-3918d5c9d4cb993751ef19a31bf2ac3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cave Tileset.png"
-dest_files=["res://.godot/imported/Cave Tileset.png-5d40682a2fb1be247ecf50b25ebf2fa7.ctex"]
+source_file="res://sprites/Props/Espinhos/Vidros Lixosos 2.png"
+dest_files=["res://.godot/imported/Vidros Lixosos 2.png-3918d5c9d4cb993751ef19a31bf2ac3c.ctex"]
 
 [params]
 

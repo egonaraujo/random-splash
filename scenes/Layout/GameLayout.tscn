@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://c365s5l5ix1wo"]
+[gd_scene load_steps=7 format=3 uid="uid://c365s5l5ix1wo"]
 
-[ext_resource type="PackedScene" uid="uid://dhcr7rjn3fvhx" path="res://shapes/Wall.tscn" id="1_oguch"]
+[ext_resource type="PackedScene" uid="uid://d0i72i6dao5gr" path="res://shapes/Wall.tscn" id="1_oguch"]
 [ext_resource type="PackedScene" uid="uid://dd2wmljmibo22" path="res://scenes/MainGame/player.tscn" id="2_ifi61"]
-[ext_resource type="Texture2D" uid="uid://com2l2n3f6e4r" path="res://shapes/triangle.png" id="2_u6qjv"]
 [ext_resource type="PackedScene" uid="uid://c8ynp2rpf5vf6" path="res://scenes/MainGame/PushField.tscn" id="3_plq0r"]
+[ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="5_fyf6i"]
+[ext_resource type="PackedScene" uid="uid://cpknuiwl6y4xe" path="res://sprites/Props/Espinhos/Prop_Spike1.tscn" id="5_u4fog"]
+[ext_resource type="PackedScene" uid="uid://d321rp6s3vjpi" path="res://sprites/Props/Espinhos/Prop_Spike2.tscn" id="6_doqua"]
 
 [node name="GameLayout" type="Node2D"]
 
 [node name="Map" type="Node" parent="."]
 
 [node name="Wall" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(173, 1163)
+position = Vector2(-25, 1282)
 rotation = 0.416277
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall2" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(-65, 989)
+position = Vector2(-223, 978)
 rotation = 1.65596
 scale = Vector2(0.751815, 0.185213)
 
@@ -55,32 +57,32 @@ rotation = 1.78056
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall4" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(413, 1136)
+position = Vector2(351, 1357)
 rotation = 3.18263
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall5" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(944, 1209)
+position = Vector2(910, 1345)
 rotation = 3.39177
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall14" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1159, 1545)
+position = Vector2(1097, 1641)
 rotation = 4.88478
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall15" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1126, 2137)
+position = Vector2(1052, 2154)
 rotation = 4.61782
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall17" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(1121, 2732)
+position = Vector2(1025, 2709)
 rotation = 4.91213
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall18" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(826, 3060)
+position = Vector2(690, 3043)
 rotation = 6.03517
 scale = Vector2(0.751815, 0.185213)
 
@@ -120,12 +122,12 @@ rotation = 3.5627
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall32" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(3534, 3472)
+position = Vector2(3580, 3491)
 rotation = 2.28284
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall33" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(3988, 3200)
+position = Vector2(4043, 3240)
 rotation = 3.0968
 scale = Vector2(0.751815, 0.185213)
 
@@ -212,6 +214,241 @@ scale = Vector2(0.751815, 0.185213)
 [node name="Wall62" parent="Map" instance=ExtResource("1_oguch")]
 position = Vector2(10919, 3290)
 rotation = 3.17391
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall65" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(11563, 3430)
+rotation = 3.52725
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall66" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(11979, 3830)
+rotation = 4.2708
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall67" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(12033, 4235)
+rotation = 4.75957
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall68" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(12237, 4508)
+rotation = 6.83199
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall69" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(12728, 4542)
+rotation = 5.92614
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall70" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(13340, 4338)
+rotation = 5.92614
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall71" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(13989, 4210)
+rotation = 6.23317
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall77" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(14563, 4028)
+rotation = 5.60547
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall78" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(15114, 3673)
+rotation = 5.81273
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall79" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(15589, 3288)
+rotation = 5.39284
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall80" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(15725, 2804)
+rotation = 4.49196
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall83" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(15861, 2313)
+rotation = 5.39691
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall84" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(16369, 1960)
+rotation = 5.98327
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall86" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(16928, 1687)
+rotation = 5.6627
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall91" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(17443, 1642)
+rotation = 6.8242
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall92" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(17919, 2017)
+rotation = 7.12877
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall94" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(18818, 1746)
+rotation = 4.59658
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall95" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(18013, 2534)
+rotation = 5.05158
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall98" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(17860, 3110)
+rotation = 4.85463
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall99" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(18020, 3630)
+rotation = 3.98676
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall100" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(18260, 4126)
+rotation = 4.65475
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall101" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(18524, 4606)
+rotation = 3.79603
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall103" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(19101, 4844)
+rotation = 3.28737
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall104" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(19621, 5087)
+rotation = 3.95164
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall105" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(20113, 5302)
+rotation = 3.10931
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall106" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(20781, 5375)
+rotation = 3.42399
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall107" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(21341, 5313)
+rotation = 2.65413
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall108" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(21896, 5109)
+rotation = 2.91659
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall109" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(22524, 4985)
+rotation = 2.96945
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall96" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(19047, 2305)
+rotation = 4.19082
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall97" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(19488, 2661)
+rotation = 3.43723
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall102" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(20064, 2645)
+rotation = 2.75602
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall93" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(18650, 1243)
+rotation = 7.37855
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall88" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(18325, 302)
+rotation = 5.41749
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall89" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(18313, 703)
+rotation = 4.08079
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall63" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(10722, 2415)
+rotation = 2.98253
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall64" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(11297, 2236)
+rotation = 2.58677
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall72" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(11731, 1839)
+rotation = 2.21834
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall73" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(12177, 1654)
+rotation = 3.41532
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall74" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(12823, 1711)
+rotation = 3.06941
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall75" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(13476, 1735)
+rotation = 3.27375
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall76" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(14129, 1825)
+rotation = 3.27375
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall81" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(14756, 1825)
+rotation = 3.06115
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall82" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(15345, 1643)
+rotation = 2.60785
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall85" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(15776, 1237)
+rotation = 2.10399
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall87" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(15826, 723)
+rotation = 1.23239
+scale = Vector2(0.751815, 0.185213)
+
+[node name="Wall90" parent="Map" instance=ExtResource("1_oguch")]
+position = Vector2(15566, 285)
+rotation = 0.789812
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall23" parent="Map" instance=ExtResource("1_oguch")]
@@ -310,81 +547,9 @@ rotation = 4.43323
 scale = Vector2(0.751815, 0.185213)
 
 [node name="Wall6" parent="Map" instance=ExtResource("1_oguch")]
-position = Vector2(739, 1273)
+position = Vector2(699, 1477)
 rotation = 1.55729
 scale = Vector2(0.751815, 0.185213)
-
-[node name="Triangle" type="Sprite2D" parent="Map"]
-position = Vector2(3396, 3403)
-rotation = -0.716186
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle2" type="Sprite2D" parent="Map"]
-position = Vector2(3492, 3315)
-rotation = -0.716186
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle3" type="Sprite2D" parent="Map"]
-position = Vector2(3600, 3199)
-rotation = -0.716186
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle4" type="Sprite2D" parent="Map"]
-position = Vector2(3708, 3127)
-rotation = -0.38304
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle5" type="Sprite2D" parent="Map"]
-position = Vector2(3852, 3095)
-rotation = -0.146313
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle6" type="Sprite2D" parent="Map"]
-position = Vector2(3996, 3087)
-rotation = 0.0180763
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle7" type="Sprite2D" parent="Map"]
-position = Vector2(4113, 3083)
-rotation = -0.225649
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle8" type="Sprite2D" parent="Map"]
-position = Vector2(4547, 2126)
-rotation = 2.61352
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle9" type="Sprite2D" parent="Map"]
-position = Vector2(4700, 2039)
-rotation = 2.30374
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle10" type="Sprite2D" parent="Map"]
-position = Vector2(4774, 1910)
-rotation = 2.30374
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle11" type="Sprite2D" parent="Map"]
-position = Vector2(4855, 1781)
-rotation = 2.30374
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle12" type="Sprite2D" parent="Map"]
-position = Vector2(4944, 1624)
-rotation = 2.04041
-scale = Vector2(-0.0252552, 0.0628553)
-texture = ExtResource("2_u6qjv")
 
 [node name="Sprite2D" parent="Map" instance=ExtResource("3_plq0r")]
 position = Vector2(9025, 1124)
@@ -392,55 +557,190 @@ rotation = -0.164309
 scale = Vector2(1.77693, 1.88458)
 direction = Vector2(0, 50)
 
-[node name="Triangle13" type="Sprite2D" parent="Map"]
-position = Vector2(9419, 3064)
-scale = Vector2(0.0340321, 0.0481577)
-texture = ExtResource("2_u6qjv")
+[node name="Sprite2D3" parent="Map" instance=ExtResource("3_plq0r")]
+position = Vector2(11036, 2558)
+rotation = -0.634263
+scale = Vector2(1.77693, 1.88458)
+direction = Vector2(0, -1)
 
-[node name="Triangle14" type="Sprite2D" parent="Map"]
-position = Vector2(9539, 3115)
-scale = Vector2(0.0340321, 0.0481577)
-texture = ExtResource("2_u6qjv")
+[node name="Sprite2D4" parent="Map" instance=ExtResource("3_plq0r")]
+position = Vector2(11037, 3160)
+rotation = -2.44665
+scale = Vector2(1.77693, 1.88458)
+direction = Vector2(0, 1)
 
-[node name="Triangle15" type="Sprite2D" parent="Map"]
-position = Vector2(9665, 3175)
-scale = Vector2(0.0340321, 0.0481577)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle16" type="Sprite2D" parent="Map"]
-position = Vector2(9800, 3223)
-scale = Vector2(0.0340321, 0.0481577)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle17" type="Sprite2D" parent="Map"]
-position = Vector2(9806, 2417)
-rotation = -2.85065
-scale = Vector2(0.0340321, 0.0481577)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle18" type="Sprite2D" parent="Map"]
-position = Vector2(9977, 2468)
-rotation = -2.85065
-scale = Vector2(0.0340321, 0.0481577)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle19" type="Sprite2D" parent="Map"]
-position = Vector2(10120, 2547)
-rotation = -2.85065
-scale = Vector2(0.0340321, 0.0481577)
-texture = ExtResource("2_u6qjv")
-
-[node name="Triangle20" type="Sprite2D" parent="Map"]
-position = Vector2(10272, 2624)
-rotation = -2.85065
-scale = Vector2(0.0340321, 0.0481577)
-texture = ExtResource("2_u6qjv")
+[node name="Sprite2D2" parent="Map" instance=ExtResource("3_plq0r")]
+position = Vector2(16899, -143)
+rotation = -0.0102374
+scale = Vector2(8.24378, 1.48542)
+direction = Vector2(0, 50)
 
 [node name="Player" parent="." instance=ExtResource("2_ifi61")]
-position = Vector2(8428, 642)
+position = Vector2(12446, 2672)
 rotation = -0.0209571
 
 [node name="Sprite2D" parent="." instance=ExtResource("3_plq0r")]
-position = Vector2(1442, 3391)
+position = Vector2(1340, 3577)
 rotation = 3.14159
-direction = Vector2(0, -20)
+scale = Vector2(1.42086, 0.325284)
+direction = Vector2(0, -1)
+force = 100.0
+
+[node name="Sprite2D2" parent="." instance=ExtResource("3_plq0r")]
+position = Vector2(1340, 3472)
+rotation = 3.14159
+scale = Vector2(1.42086, 0.325284)
+direction = Vector2(0, -1)
+force = 30.0
+
+[node name="Sprite2D3" parent="." instance=ExtResource("3_plq0r")]
+position = Vector2(1340, 3301)
+rotation = 3.14159
+scale = Vector2(1.42086, 0.605284)
+direction = Vector2(0, -1)
+force = 20.0
+
+[node name="Sprite2D5" parent="." instance=ExtResource("3_plq0r")]
+position = Vector2(7227, -244)
+scale = Vector2(5.28682, 1.02088)
+direction = Vector2(0, 1)
+force = 100.0
+
+[node name="Sprite2D4" parent="." instance=ExtResource("3_plq0r")]
+position = Vector2(1340, 2987)
+rotation = 3.14159
+scale = Vector2(1.42086, 1.12528)
+direction = Vector2(0, -1)
+force = 4.0
+
+[node name="PeixeEstranho" parent="." instance=ExtResource("5_fyf6i")]
+position = Vector2(11840, 2857)
+rotation = 3.11842
+scale = Vector2(1.21818, 1.13088)
+maxDistance = 400.0
+
+[node name="PeixeEstranho2" parent="." instance=ExtResource("5_fyf6i")]
+position = Vector2(19765, 3302)
+rotation = 3.11842
+scale = Vector2(1.21818, 1.13088)
+speed = 400.0
+maxDistance = 1000.0
+
+[node name="PeixeEstranho3" parent="." instance=ExtResource("5_fyf6i")]
+position = Vector2(19908, 3949)
+rotation = 3.11842
+scale = Vector2(1.21818, 1.13088)
+speed = 200.0
+maxDistance = 600.0
+
+[node name="PeixeEstranho4" parent="." instance=ExtResource("5_fyf6i")]
+position = Vector2(22484, 4231)
+scale = Vector2(1.21818, 1.13088)
+speed = 200.0
+maxDistance = 600.0
+
+[node name="PeixeEstranho5" parent="." instance=ExtResource("5_fyf6i")]
+position = Vector2(22767, 3463)
+scale = Vector2(1.21818, 1.13088)
+speed = 200.0
+maxDistance = 600.0
+
+[node name="PeixeEstranho6" parent="." instance=ExtResource("5_fyf6i")]
+position = Vector2(21207, 4521)
+scale = Vector2(1.21818, 1.13088)
+speed = 200.0
+maxDistance = 600.0
+
+[node name="PropSpike1" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(3558, 3268)
+rotation = -0.789411
+
+[node name="PropSpike2" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(3422, 3430)
+rotation = -0.789411
+
+[node name="PropSpike3" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(4474, 2075)
+rotation = 2.60513
+
+[node name="PropSpike4" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(4676, 1953)
+rotation = 2.35973
+
+[node name="PropSpike5" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(3825, 3176)
+rotation = -0.0898917
+
+[node name="PropSpike6" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(4880, 1630)
+rotation = 2.21285
+
+[node name="PropSpike7" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(6095, 1893)
+rotation = 5.03746
+
+[node name="PropSpike8" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(5827, 2163)
+rotation = 5.7909
+
+[node name="PropSpike9" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(9262, 2873)
+rotation = 0.943698
+
+[node name="PropSpike10" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(9551, 3124)
+rotation = 0.193379
+
+[node name="PropSpike11" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(9983, 3181)
+rotation = -0.0191978
+
+[node name="PropSpike12" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(9802, 2443)
+rotation = -2.87293
+
+[node name="PropSpike13" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(10004, 2503)
+rotation = -2.5683
+
+[node name="PropSpike14" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(10418, 2580)
+rotation = -3.00007
+
+[node name="PropSpike24" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(12955, 3032)
+rotation = -2.53951
+
+[node name="PropSpike16" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(13581, 3072)
+rotation = -3.13513
+
+[node name="PropSpike17" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(14023, 3084)
+rotation = -3.13513
+
+[node name="PropSpike18" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(13743, 2841)
+rotation = -6.21921
+
+[node name="PropSpike19" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(14110, 2911)
+rotation = 0.60545
+
+[node name="PropSpike20" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(12919, 2660)
+
+[node name="PropSpike25" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(13236, 3118)
+rotation = 2.82659
+
+[node name="PropSpike23" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(12742, 2801)
+rotation = -1.01449
+
+[node name="PropSpike21" parent="." instance=ExtResource("6_doqua")]
+position = Vector2(13197, 2679)
+
+[node name="PropSpike22" parent="." instance=ExtResource("5_u4fog")]
+position = Vector2(13534, 2754)
+rotation = 0.752533
