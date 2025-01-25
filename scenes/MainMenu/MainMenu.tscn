@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhcwrdljag3ty"]
+
+[ext_resource type="Texture2D" uid="uid://c7dl8yypj3df4" path="res://shapes/square.png" id="1_bp64k"]
+[ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="1_kq0tu"]
+[ext_resource type="PackedScene" uid="uid://8bt1c0poof2o" path="res://UI/StandardButton.tscn" id="2_ew6ds"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcmav"]
+font_size = 50
+font_color = Color(0.0253638, 0.0253638, 0.0253638, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kq0tu")
+
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0.230272, 0.635105, 0.704183, 1)
+position = Vector2(648.5, 379.5)
+scale = Vector2(0.719306, 0.426898)
+texture = ExtResource("1_bp64k")
+
+[node name="ComecarButton" parent="." instance=ExtResource("2_ew6ds")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_bottom = 81.0
+grow_vertical = 2
+
+[node name="Label" parent="ComecarButton/CenterContainer" index="0"]
+text = "Começar"
+
+[node name="SairButton" parent="." instance=ExtResource("2_ew6ds")]
+layout_mode = 1
+offset_top = 445.0
+offset_bottom = 534.0
+
+[node name="Label" parent="SairButton/CenterContainer" index="0"]
+text = "Sair
+"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 348.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Bubble Capy
+"
+label_settings = SubResource("LabelSettings_bcmav")
+
+[connection signal="pressed" from="ComecarButton" to="." method="_on_comecar_button_pressed"]
+[connection signal="pressed" from="SairButton" to="." method="_on_sair_button_pressed"]
+
+[editable path="ComecarButton"]
+[editable path="SairButton"]

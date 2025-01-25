@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ynp2rpf5vf6"]
+
+[ext_resource type="Texture2D" uid="uid://bgfm0fen3477f" path="res://shapes/down-arrow.png" id="1_7542q"]
+[ext_resource type="Script" path="res://scenes/MainGame/push_field.gd" id="1_u0dut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnqfe"]
+size = Vector2(371, 368)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_7542q")
+script = ExtResource("1_u0dut")
+
+[node name="PushField" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushField"]
+shape = SubResource("RectangleShape2D_lnqfe")
+
+[connection signal="body_entered" from="PushField" to="." method="_on_push_field_body_entered"]
+[connection signal="body_exited" from="PushField" to="." method="_on_push_field_body_exited"]

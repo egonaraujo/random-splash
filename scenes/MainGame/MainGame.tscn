@@ -1,0 +1,168 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdavaijubluxx"]
+
+[ext_resource type="Script" path="res://scenes/MainGame/main_game.gd" id="1_2bvir"]
+[ext_resource type="Texture2D" uid="uid://c7dl8yypj3df4" path="res://shapes/square.png" id="1_h88lo"]
+[ext_resource type="Texture2D" uid="uid://dh2oxellyq2k4" path="res://shapes/circle.png" id="2_vyrah"]
+[ext_resource type="Texture2D" uid="uid://vxl1n4wdbu8q" path="res://shapes/rounded-square.png" id="4_rn1vi"]
+[ext_resource type="Texture2D" uid="uid://bdn1g543rtyng" path="res://shapes/star.png" id="4_vjhe2"]
+[ext_resource type="PackedScene" uid="uid://c8ynp2rpf5vf6" path="res://scenes/MainGame/PushField.tscn" id="6_v4tyl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tnil1"]
+radius = 237.034
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aviu0"]
+radius = 201.864
+height = 981.193
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cn5lh"]
+friction = 0.15
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oyuue"]
+radius = 44.0114
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ibcy"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.02
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource("1_2bvir")
+
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0.455725, 0.586048, 0.665996, 1)
+z_index = -1
+position = Vector2(633, 2)
+texture = ExtResource("1_h88lo")
+
+[node name="Circle" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65224, 0.331884, 0.448664, 1)
+position = Vector2(-488, 706)
+scale = Vector2(0.256795, 0.256795)
+texture = ExtResource("2_vyrah")
+
+[node name="Circle2" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65224, 0.331884, 0.448664, 1)
+position = Vector2(-404, 420)
+scale = Vector2(0.256795, 0.256795)
+texture = ExtResource("2_vyrah")
+
+[node name="Circle3" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65224, 0.331884, 0.448664, 1)
+position = Vector2(-788, 414)
+scale = Vector2(0.256795, 0.256795)
+texture = ExtResource("2_vyrah")
+
+[node name="Rounded-square" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65098, 0.333333, 0.447059, 1)
+position = Vector2(20, 168)
+scale = Vector2(0.514527, 0.228679)
+texture = ExtResource("4_rn1vi")
+
+[node name="Rounded-square2" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65098, 0.333333, 0.447059, 1)
+position = Vector2(31, -456)
+scale = Vector2(0.514527, 0.228679)
+texture = ExtResource("4_rn1vi")
+
+[node name="Rounded-square3" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65098, 0.333333, 0.447059, 1)
+position = Vector2(784, -325)
+rotation = 0.406219
+scale = Vector2(0.514527, 0.228679)
+texture = ExtResource("4_rn1vi")
+
+[node name="Rounded-square4" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65098, 0.333333, 0.447059, 1)
+position = Vector2(1075, 388)
+rotation = 1.65749
+scale = Vector2(0.514527, 0.228679)
+texture = ExtResource("4_rn1vi")
+
+[node name="Rounded-square5" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65098, 0.333333, 0.447059, 1)
+position = Vector2(506, 966)
+rotation = 2.97817
+scale = Vector2(0.514527, 0.228679)
+texture = ExtResource("4_rn1vi")
+
+[node name="Rounded-square6" type="Sprite2D" parent="Background"]
+self_modulate = Color(0.65098, 0.333333, 0.447059, 1)
+position = Vector2(-1008, -199)
+rotation = 1.5277
+scale = Vector2(0.514527, 0.228679)
+texture = ExtResource("4_rn1vi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-490, 704)
+shape = SubResource("CircleShape2D_tnil1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-406, 430)
+shape = SubResource("CircleShape2D_tnil1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-794, 408)
+shape = SubResource("CircleShape2D_tnil1")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-1006, -196)
+rotation = -3.18511
+shape = SubResource("CapsuleShape2D_aviu0")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(9, 168)
+rotation = -1.57195
+shape = SubResource("CapsuleShape2D_aviu0")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(7, -455)
+rotation = -1.57195
+shape = SubResource("CapsuleShape2D_aviu0")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(775, -321)
+rotation = -1.17444
+shape = SubResource("CapsuleShape2D_aviu0")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(1065, 373)
+rotation = 0.0923413
+shape = SubResource("CapsuleShape2D_aviu0")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(504, 960)
+rotation = 1.39149
+shape = SubResource("CapsuleShape2D_aviu0")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(664, 646)
+physics_material_override = SubResource("PhysicsMaterial_cn5lh")
+gravity_scale = 0.0
+linear_damp = 0.3
+
+[node name="Circle" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_vyrah")
+
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D/Circle"]
+scale = Vector2(1, 1)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_oyuue")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RigidBody2D"]
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_6ibcy")
+texture = ExtResource("4_vjhe2")
+lifetime = 3.0
+
+[node name="PushField" parent="." instance=ExtResource("6_v4tyl")]
+position = Vector2(1338, 561)
+rotation = -3.61249
+scale = Vector2(0.227456, 0.568272)
+direction = Vector2(-1, -1)
