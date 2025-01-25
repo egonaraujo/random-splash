@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdavaijubluxx"]
+[gd_scene load_steps=11 format=3 uid="uid://bdavaijubluxx"]
 
 [ext_resource type="Texture2D" uid="uid://c7dl8yypj3df4" path="res://shapes/square.png" id="1_h88lo"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_hfcji"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dd2wmljmibo22" path="res://scenes/MainGame/player.tscn" id="4_52etk"]
 [ext_resource type="Texture2D" uid="uid://vxl1n4wdbu8q" path="res://shapes/rounded-square.png" id="4_rn1vi"]
 [ext_resource type="PackedScene" uid="uid://c8ynp2rpf5vf6" path="res://scenes/MainGame/PushField.tscn" id="6_v4tyl"]
+[ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="7_fjqr2"]
+[ext_resource type="PackedScene" uid="uid://dorm1h4qxeub0" path="res://scenes/MainGame/Obstacles/espinho.tscn" id="8_32pr5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnil1"]
 radius = 237.034
@@ -82,6 +84,7 @@ scale = Vector2(0.514527, 0.228679)
 texture = ExtResource("4_rn1vi")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-490, 704)
@@ -133,6 +136,19 @@ position = Vector2(1337.22, 561.396)
 rotation = -3.61249
 scale = Vector2(0.342815, 0.568272)
 direction = Vector2(-1, -1)
-force = 130.0
+force = 70.0
+
+[node name="PeixeEstranho" parent="." instance=ExtResource("7_fjqr2")]
+position = Vector2(1020, 471)
+
+[node name="PeixeEstranho2" parent="." instance=ExtResource("7_fjqr2")]
+position = Vector2(537, -86)
+
+[node name="Espinho" parent="." instance=ExtResource("8_32pr5")]
+position = Vector2(18, 118)
+
+[node name="Espinho2" parent="." instance=ExtResource("8_32pr5")]
+position = Vector2(1155, 279)
+scale = Vector2(0.0484301, 0.0484301)
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]

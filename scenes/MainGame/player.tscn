@@ -1,32 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd2wmljmibo22"]
+[gd_scene load_steps=7 format=3 uid="uid://dd2wmljmibo22"]
 
-[ext_resource type="Texture2D" uid="uid://dh2oxellyq2k4" path="res://shapes/circle.png" id="1_ffl02"]
 [ext_resource type="Script" path="res://scenes/MainGame/input_force.gd" id="1_qmsfi"]
-[ext_resource type="Texture2D" uid="uid://bdn1g543rtyng" path="res://shapes/star.png" id="2_y0r7o"]
+[ext_resource type="Texture2D" uid="uid://clbnjll3epv0j" path="res://scenes/MainGame/Sprites/Bolha.png" id="2_rbkmd"]
+[ext_resource type="Texture2D" uid="uid://cevxarn72scd7" path="res://scenes/MainGame/Sprites/Bolhas.png" id="3_p3e72"]
+[ext_resource type="Texture2D" uid="uid://bjqbu5piwp661" path="res://scenes/MainGame/Sprites/Capivara.png" id="4_gmbs1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cn5lh"]
 friction = 0.15
 bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oyuue"]
-radius = 44.0114
-
-[sub_resource type="Curve" id="Curve_x6a4v"]
-max_value = 4.0
-_data = [Vector2(0, 0.967033), 0.0, 0.0, 0, 0, Vector2(1, 4), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_wcsxn"]
-curve = SubResource("Curve_x6a4v")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ibcy"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 0, 0)
-scale_min = 0.01
-scale_max = 0.01
-scale_curve = SubResource("CurveTexture_wcsxn")
+radius = 123.004
 
 [node name="Player" type="RigidBody2D"]
+collision_mask = 30
 physics_material_override = SubResource("PhysicsMaterial_cn5lh")
 gravity_scale = 0.0
 linear_damp = 0.3
@@ -34,21 +21,25 @@ script = ExtResource("1_qmsfi")
 oxygenLossPerSec = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_oyuue")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_ffl02")
+z_index = 1
+z_as_relative = false
+texture = ExtResource("2_rbkmd")
+
+[node name="Bolhas" type="Sprite2D" parent="Sprite"]
+z_index = -1
+z_as_relative = false
+texture = ExtResource("3_p3e72")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite"]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 5
-process_material = SubResource("ParticleProcessMaterial_6ibcy")
-texture = ExtResource("2_y0r7o")
-lifetime = 3.0
+[node name="Capivara" type="Sprite2D" parent="."]
+z_as_relative = false
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_gmbs1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

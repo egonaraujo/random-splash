@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://lj1ye2taylqp"]
+
+[ext_resource type="Texture2D" uid="uid://c20d23rr8rd5x" path="res://scenes/MainGame/Sprites/Peixe_Estranho.png" id="1_gfeo3"]
+[ext_resource type="Script" path="res://scenes/MainGame/obstacle.gd" id="2_1ixfr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ndp7c"]
+bounce = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1moae"]
+radius = 20.0106
+height = 186.57
+
+[node name="PeixeEstranho" type="Sprite2D"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_gfeo3")
+script = ExtResource("2_1ixfr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_ndp7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2.305)
+rotation = 1.56676
+shape = SubResource("CapsuleShape2D_1moae")

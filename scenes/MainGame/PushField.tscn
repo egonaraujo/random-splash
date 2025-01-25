@@ -6,14 +6,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnqfe"]
 size = Vector2(371, 368)
 
-[node name="Sprite2D" type="Sprite2D"]
+[node name="PushField" type="Sprite2D"]
 texture = ExtResource("1_7542q")
 script = ExtResource("1_u0dut")
 
-[node name="PushField" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PushField"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_lnqfe")
 
-[connection signal="body_entered" from="PushField" to="." method="_on_push_field_body_entered"]
-[connection signal="body_exited" from="PushField" to="." method="_on_push_field_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_push_field_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_push_field_body_exited"]
