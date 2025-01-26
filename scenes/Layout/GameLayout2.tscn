@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://oqwbwjsytwgh"]
+[gd_scene load_steps=45 format=4 uid="uid://oqwbwjsytwgh"]
 
 [ext_resource type="PackedScene" uid="uid://dhcr7rjn3fvhx" path="res://shapes/Wall.tscn" id="1_oguch"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_sb0gj"]
@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cg7cjtplm1jhd" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXDown.tscn" id="3_34xj6"]
 [ext_resource type="PackedScene" uid="uid://b4vau2ut2okvq" path="res://scenes/Layout/Background/water/WaterBackground.tscn" id="3_i4vut"]
 [ext_resource type="PackedScene" uid="uid://c8ynp2rpf5vf6" path="res://scenes/MainGame/PushField.tscn" id="3_plq0r"]
+[ext_resource type="Texture2D" uid="uid://cak4csvmbh82e" path="res://sprites/Gibiteca-removebg-preview.png" id="5_ds78n"]
 [ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="5_fyf6i"]
 [ext_resource type="PackedScene" uid="uid://py1h1ysumtnb" path="res://scenes/Layout/Spikes/Spikes1.tscn" id="5_pqnm0"]
+[ext_resource type="Texture2D" uid="uid://bhg8ef2ff7yka" path="res://sprites/Jardim_Botanico-removebg-preview.png" id="6_ipj0o"]
 [ext_resource type="PackedScene" uid="uid://cer3yu4keeg41" path="res://scenes/Layout/Spikes/Spikes2.tscn" id="6_kg5qo"]
+[ext_resource type="Texture2D" uid="uid://414oerdu3qyc" path="res://sprites/Parque_Barigui-removebg-preview.png" id="7_dw7oe"]
 [ext_resource type="PackedScene" uid="uid://dfbmarxc6sqo6" path="res://scenes/Layout/Background/water/BubblesBackground.tscn" id="11_mmyrs"]
 [ext_resource type="Texture2D" uid="uid://dou8t55p76a08" path="res://scenes/Layout/Background/teste tile 2.png" id="12_jc82y"]
 [ext_resource type="PackedScene" uid="uid://cad87wc0d57y6" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXUp.tscn" id="12_p76xq"]
@@ -839,6 +842,24 @@ position = Vector2(19304, 5387)
 
 [node name="PushFieldVfx6" parent="Map" instance=ExtResource("12_p76xq")]
 position = Vector2(20167, 5401)
+
+[node name="Gibiteca-removebg-preview" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(7056, -1840)
+scale = Vector2(3.77619, 3.77619)
+texture = ExtResource("5_ds78n")
+
+[node name="JardimBotanico-removebg-preview" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-736, -792)
+scale = Vector2(2.98333, 2.98333)
+texture = ExtResource("6_ipj0o")
+
+[node name="ParqueBarigui-removebg-preview" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(28576, -1576)
+scale = Vector2(6.25238, 6.25238)
+texture = ExtResource("7_dw7oe")
 
 [node name="Props" type="Node" parent="."]
 
@@ -3029,6 +3050,7 @@ metadata/_edit_lock_ = true
 position = Vector2(288, -550)
 scale = Vector2(1.03982, 1.03982)
 texture = ExtResource("13_aoy52")
+metadata/_edit_lock_ = true
 
 [node name="2-rua24h" type="Sprite2D" parent="Images"]
 position = Vector2(16869, -669)
@@ -3425,16 +3447,18 @@ direction = Vector2(0, 1)
 force = 200.0
 
 [node name="PushField25" parent="." instance=ExtResource("3_plq0r")]
-position = Vector2(7096, -992)
-scale = Vector2(7.84375, 3.51563)
+position = Vector2(7096, -458)
+scale = Vector2(7.84375, 1.42969)
 direction = Vector2(0, 1)
 force = 200.0
+metadata/_edit_lock_ = true
 
 [node name="PushField26" parent="." instance=ExtResource("3_plq0r")]
-position = Vector2(248, -944)
-scale = Vector2(7.84375, 3.51563)
+position = Vector2(248, -294)
+scale = Vector2(7.84375, 0.976563)
 direction = Vector2(0, 1)
 force = 200.0
+metadata/_edit_lock_ = true
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 [connection signal="body_entered" from="BotanicoCameraArea2" to="BotanicoCameraArea2" method="_on_body_entered"]
