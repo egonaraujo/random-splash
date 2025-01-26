@@ -1,15 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://dd2wmljmibo22"]
+[gd_scene load_steps=8 format=3 uid="uid://dd2wmljmibo22"]
 
 [ext_resource type="Script" path="res://scenes/MainGame/player.gd" id="1_qmsfi"]
-[ext_resource type="PackedScene" uid="uid://bq11uk450vdsv" path="res://scenes/MainGame/Mouse/WaveParticle.tscn" id="2_2yxaw"]
 [ext_resource type="Texture2D" uid="uid://clbnjll3epv0j" path="res://scenes/MainGame/Sprites/Bolha.png" id="2_rbkmd"]
 [ext_resource type="Texture2D" uid="uid://cevxarn72scd7" path="res://scenes/MainGame/Sprites/Bolhas.png" id="3_p3e72"]
 [ext_resource type="Texture2D" uid="uid://bjqbu5piwp661" path="res://scenes/MainGame/Sprites/Capivara.png" id="4_gmbs1"]
 [ext_resource type="Texture2D" uid="uid://c7voesmb2ltm5" path="res://scenes/MainGame/Light/lightTexture.png" id="5_t0j5u"]
-[ext_resource type="AudioStream" uid="uid://b1t88amcyudql" path="res://SFX/MovingSound.wav" id="6_51f74"]
-[ext_resource type="AudioStream" uid="uid://g4drd001bsgc" path="res://SFX/HitDying.mp3" id="7_rcu5y"]
-[ext_resource type="AudioStream" uid="uid://yk1xwlglrm46" path="res://SFX/HitInvincible.mp3" id="8_duq6i"]
-[ext_resource type="Texture2D" uid="uid://cm71suqbbjajq" path="res://scenes/MainGame/Sprites/pop-spritesheet.png" id="9_ls785"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cn5lh"]
 friction = 0.09
@@ -18,87 +13,16 @@ bounce = 0.5
 [sub_resource type="CircleShape2D" id="CircleShape2D_oyuue"]
 radius = 123.004
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bmmtc"]
-atlas = ExtResource("9_ls785")
-region = Rect2(0, 0, 258, 258)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbjaw"]
-atlas = ExtResource("9_ls785")
-region = Rect2(258, 0, 258, 258)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_848xk"]
-atlas = ExtResource("9_ls785")
-region = Rect2(516, 0, 258, 258)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4smh"]
-atlas = ExtResource("9_ls785")
-region = Rect2(774, 0, 258, 258)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bmjpj"]
-atlas = ExtResource("9_ls785")
-region = Rect2(0, 258, 258, 258)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c3742"]
-atlas = ExtResource("9_ls785")
-region = Rect2(258, 258, 258, 258)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tofkt"]
-atlas = ExtResource("9_ls785")
-region = Rect2(516, 258, 258, 258)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6e123"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bmmtc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbjaw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_848xk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4smh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bmjpj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c3742")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tofkt")
-}],
-"loop": false,
-"name": &"Dying",
-"speed": 7.0
-}]
-
 [node name="Player" type="RigidBody2D"]
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("WaveVFX")]
 collision_mask = 30
 physics_material_override = SubResource("PhysicsMaterial_cn5lh")
 gravity_scale = 0.0
 linear_damp = 0.25
 script = ExtResource("1_qmsfi")
-power = 170.0
-minRadius = 80.0
-maxRadius = 300.0
 oxygenLossPerSec = 1.2
-WaveVFX = NodePath("GPUParticles2D")
-minPushCooldown = 10000.0
-maxPushCooldown = 10000.0
-pushStrength = 0.0
-pushDuration = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oyuue")
-
-[node name="GPUParticles2D" parent="." instance=ExtResource("2_2yxaw")]
-emitting = false
-amount = 6
-lifetime = 2.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 light_mask = 0
@@ -121,26 +45,10 @@ light_mask = 0
 z_as_relative = false
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("4_gmbs1")
-flip_h = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Capivara"]
 scale = Vector2(8.80208, 8.80208)
 shadow_enabled = true
 texture = ExtResource("5_t0j5u")
-
-[node name="MoveAudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_51f74")
-autoplay = true
-
-[node name="HitAudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_rcu5y")
-
-[node name="InvincibleHitAudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_duq6i")
-
-[node name="AnimatedDying" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.45, 0.45)
-sprite_frames = SubResource("SpriteFrames_6e123")
-animation = &"Dying"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

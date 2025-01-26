@@ -1,15 +1,17 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4hvr7hgb3gf2"]
 
 [ext_resource type="Script" path="res://scenes/VictoryScreen/victory_screen.gd" id="1_uvtfi"]
-[ext_resource type="Texture2D" uid="uid://bdpc10b26ifgf" path="res://scenes/VictoryScreen/VictoryBackground.png" id="2_5kjae"]
-[ext_resource type="Texture2D" uid="uid://bqusdauuf1rhe" path="res://scenes/VictoryScreen/VictoryText.png" id="3_tfcmh"]
-[ext_resource type="Texture2D" uid="uid://djs5xf374luhn" path="res://scenes/VictoryScreen/VictoryButton.png" id="4_v1cio"]
+[ext_resource type="Texture2D" uid="uid://b84h52m0yjoa0" path="res://UI/MainMenu/MenuBG.png" id="2_7284o"]
+[ext_resource type="Texture2D" uid="uid://d0jlh51ofo5x7" path="res://scenes/VictoryScreen/Vitoria.png" id="3_mjgti"]
+[ext_resource type="Texture2D" uid="uid://ex0tmqptng78" path="res://UI/Voltar.png" id="4_2lqkv"]
 [ext_resource type="Texture2D" uid="uid://8fbko2o5omgm" path="res://scenes/VictoryScreen/FinalComic.png" id="5_n7cqe"]
 [ext_resource type="Texture2D" uid="uid://8cy2ipg3euty" path="res://UI/Flecha.png" id="6_v1w8e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vr4gh"]
-font_size = 66
-font_color = Color(0, 0, 0, 1)
+font_size = 82
+font_color = Color(1, 0.396078, 0.0705882, 1)
+outline_size = 27
+outline_color = Color(0, 0, 0, 1)
 
 [node name="VictoryScreen" type="Control"]
 layout_mode = 3
@@ -20,31 +22,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uvtfi")
 
-[node name="VictoryBackground" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(1.00833, 1.01481)
-texture = ExtResource("2_5kjae")
+[node name="MenuBg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1928.0
+offset_bottom = 1088.0
+texture = ExtResource("2_7284o")
 
-[node name="VictoryText" type="Sprite2D" parent="."]
-position = Vector2(1008, 320)
-texture = ExtResource("3_tfcmh")
-
-[node name="RestartButton" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -222.0
-offset_top = -344.0
-offset_right = 222.0
-offset_bottom = -202.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("4_v1cio")
-texture_pressed = ExtResource("4_v1cio")
-stretch_mode = 4
+[node name="MenuBg2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1928.0
+offset_bottom = 1088.0
+texture = ExtResource("3_mjgti")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -53,16 +45,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -190.5
-offset_top = 44.0
-offset_right = 190.5
-offset_bottom = 135.0
+offset_left = -504.0
+offset_top = 28.0
+offset_right = 24.0
+offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Time: 12345"
+text = "00:00s"
 label_settings = SubResource("LabelSettings_vr4gh")
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RestartButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -416.0
+offset_top = -272.0
+offset_right = 28.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_2lqkv")
+texture_pressed = ExtResource("4_2lqkv")
+stretch_mode = 4
 
 [node name="Comic" type="ColorRect" parent="."]
 layout_mode = 1
