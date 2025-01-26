@@ -1,7 +1,14 @@
 extends Control
 
+var timer = 5
+
 func _ready() -> void:
 	$Label.text = "Time: " + to_time(PlayerData.time)
+	hideComicAfterTime()
+
+func hideComicAfterTime() -> void:
+	await get_tree().create_timer(timer).timeout
+	$Comic.hide()
 
 func to_time(timeInSec:float) -> String:
 	var hours = floor(timeInSec/3600)
@@ -14,8 +21,12 @@ func to_time(timeInSec:float) -> String:
 		finalString += "%02d:" % hours
 	if mins > 0 || hours > 0: #display minutes 0 if hour is > 0
 		finalString +=  "%02d:" % mins
-	finalString += "%05.2f" % timeInSec
+	finalString += "%05.2fs" % timeInSec
 	return finalString
 
 func _on_restart_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/MainMenu/MainMenu.tscn")
+
+func _on_comic_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton && event.is_pressed():
+		$Comic.hide()
