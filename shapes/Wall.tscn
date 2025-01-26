@@ -15,6 +15,7 @@ texture = ExtResource("1_sa376")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(0.514527, 0.228679)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-4.43449e-05, -17.4918)
@@ -26,3 +27,6 @@ shape = SubResource("RectangleShape2D_md5ev")
 position = Vector2(-5, -6)
 scale = Vector2(2, 2)
 texture = ExtResource("2_24a6g")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder_light_mask = 0

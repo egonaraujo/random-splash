@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd2wmljmibo22"]
+[gd_scene load_steps=8 format=3 uid="uid://dd2wmljmibo22"]
 
 [ext_resource type="Script" path="res://scenes/MainGame/player.gd" id="1_qmsfi"]
 [ext_resource type="Texture2D" uid="uid://clbnjll3epv0j" path="res://scenes/MainGame/Sprites/Bolha.png" id="2_rbkmd"]
 [ext_resource type="Texture2D" uid="uid://cevxarn72scd7" path="res://scenes/MainGame/Sprites/Bolhas.png" id="3_p3e72"]
 [ext_resource type="Texture2D" uid="uid://bjqbu5piwp661" path="res://scenes/MainGame/Sprites/Capivara.png" id="4_gmbs1"]
+[ext_resource type="Texture2D" uid="uid://c7voesmb2ltm5" path="res://scenes/MainGame/Light/lightTexture.png" id="5_t0j5u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cn5lh"]
 friction = 0.09
@@ -24,6 +25,7 @@ oxygenLossPerSec = 1.2
 shape = SubResource("CircleShape2D_oyuue")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+light_mask = 0
 z_index = 1
 z_as_relative = false
 texture = ExtResource("2_rbkmd")
@@ -34,12 +36,19 @@ z_as_relative = false
 texture = ExtResource("3_p3e72")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite"]
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Capivara" type="Sprite2D" parent="."]
+light_mask = 0
 z_as_relative = false
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("4_gmbs1")
+
+[node name="PointLight2D" type="PointLight2D" parent="Capivara"]
+scale = Vector2(8.80208, 8.80208)
+shadow_enabled = true
+texture = ExtResource("5_t0j5u")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
