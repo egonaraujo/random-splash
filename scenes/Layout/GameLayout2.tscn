@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://oqwbwjsytwgh"]
+[gd_scene load_steps=19 format=4 uid="uid://oqwbwjsytwgh"]
 
 [ext_resource type="PackedScene" uid="uid://dhcr7rjn3fvhx" path="res://shapes/Wall.tscn" id="1_oguch"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_sb0gj"]
@@ -11,7 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://cer3yu4keeg41" path="res://scenes/Layout/Spikes/Spikes2.tscn" id="6_kg5qo"]
 [ext_resource type="PackedScene" uid="uid://dfbmarxc6sqo6" path="res://scenes/Layout/Background/water/BubblesBackground.tscn" id="11_mmyrs"]
 [ext_resource type="PackedScene" uid="uid://cad87wc0d57y6" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXUp.tscn" id="12_p76xq"]
+[ext_resource type="Texture2D" uid="uid://cwud0yiekh2f7" path="res://scenes/Layout/Pontos/1-Jardim Botânico.png" id="13_aoy52"]
+[ext_resource type="Texture2D" uid="uid://b6i7apocej1to" path="res://scenes/Layout/Pontos/2-Rua24h.png" id="14_2coyd"]
 [ext_resource type="Texture2D" uid="uid://uwuybmobp5qx" path="res://scenes/Layout/Background/tiny tilemaking.png" id="14_hpn4x"]
+[ext_resource type="Texture2D" uid="uid://q2tl34qm27yu" path="res://scenes/Layout/Pontos/3-Gibiteca.png" id="15_niwpl"]
+[ext_resource type="Texture2D" uid="uid://b0s3uw2p4jvc1" path="res://scenes/Layout/Pontos/5-Parque Barigui.png" id="16_avjap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a52m6"]
 texture = ExtResource("14_hpn4x")
@@ -2205,3 +2209,23 @@ tile_set = SubResource("TileSet_lb1ve")
 [node name="Player" parent="." instance=ExtResource("2_ifi61")]
 position = Vector2(7441, 1137)
 rotation = -0.0209571
+
+[node name="1-jardimBotânico" type="Sprite2D" parent="."]
+position = Vector2(7352, 356)
+scale = Vector2(1.03982, 1.03982)
+texture = ExtResource("13_aoy52")
+
+[node name="2-rua24h" type="Sprite2D" parent="."]
+position = Vector2(23944, -205)
+scale = Vector2(1.47848, 1.47848)
+texture = ExtResource("14_2coyd")
+
+[node name="3-gibiteca" type="Sprite2D" parent="."]
+position = Vector2(14291, -126)
+scale = Vector2(1.22656, 1.22656)
+texture = ExtResource("15_niwpl")
+
+[node name="5-parqueBarigui" type="Sprite2D" parent="."]
+position = Vector2(35374, -252)
+scale = Vector2(1.98902, 1.98902)
+texture = ExtResource("16_avjap")
