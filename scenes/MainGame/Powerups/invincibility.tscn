@@ -1,21 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://pjs7qa53qkjt"]
 
-[ext_resource type="Texture2D" uid="uid://bdn1g543rtyng" path="res://shapes/star.png" id="1_2n27e"]
+[ext_resource type="Texture2D" uid="uid://80ex0lu5137f" path="res://sprites/Pinhao.png" id="2_3iiha"]
 [ext_resource type="Script" path="res://scenes/MainGame/invincibility.gd" id="2_8ama8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0nc5d"]
-radius = 26.0768
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itm1f"]
+radius = 14.0
+height = 74.0
 
 [node name="StaticBody2D" type="Area2D"]
 collision_layer = 8
 script = ExtResource("2_8ama8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_0nc5d")
+shape = SubResource("CapsuleShape2D_itm1f")
 
 [node name="Invincibility" type="Sprite2D" parent="."]
 self_modulate = Color(0.732247, 0.712416, 0, 1)
-scale = Vector2(0.0392456, 0.0392456)
-texture = ExtResource("1_2n27e")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3iiha")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

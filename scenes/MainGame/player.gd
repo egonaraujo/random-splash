@@ -57,7 +57,6 @@ func _physics_process(delta: float) -> void:
 	$Capivara.rotate(bubbleRotationAnimation*delta * -1)
 	if ($Sprite.rotation > 0.11 or $Sprite.rotation < -0.11):
 		bubbleRotationAnimation *= -1 #change rotation
-		
 
 func processPowerups(delta: float) -> void:
 	if IsInvincible():
@@ -103,10 +102,8 @@ func processInput() -> void:
 	else:
 		$MoveAudioPlayer.stream_paused = true
 		#disable particle
-		#WaveVFX.emitting=false;
-		
-		
-		 
+		WaveVFX.emitting=false;
+
 
 func processRandomMovement(delta:float) -> void:
 	randomPushTimer -= delta
@@ -177,4 +174,8 @@ func reset_player_visual() -> void:
 	$AnimatedDying.hide()
 	global_position = resetPos
 
- 
+func apply_zoom(zoom:float)->void:
+	$Sprite/Camera2D.zoom = Vector2(zoom,zoom)
+
+func reset_zoom() -> void:
+	$Sprite/Camera2D.zoom = Vector2(0.7,0.7)

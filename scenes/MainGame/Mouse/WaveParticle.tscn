@@ -13,7 +13,8 @@ colors = PackedColorArray(0.87451, 0.87451, 0.87451, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_0qktp")
 
 [sub_resource type="Curve" id="Curve_n7m4u"]
-_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+max_value = 2.0
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_l7j6l"]
@@ -29,7 +30,8 @@ color_ramp = SubResource("GradientTexture1D_wgmii")
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
 material = SubResource("CanvasItemMaterial_5f8ih")
-amount = 3
+emitting = false
+amount = 5
 process_material = SubResource("ParticleProcessMaterial_emhx7")
 texture = ExtResource("1_75yh1")
-lifetime = 3.0
+lifetime = 1.5

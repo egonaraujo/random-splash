@@ -3,7 +3,7 @@ extends Control
 var timer = 5
 
 func _ready() -> void:
-	$Label.text = "Time: " + to_time(PlayerData.time)
+	$Label.text = to_time(PlayerData.time)
 	hideComicAfterTime()
 
 func hideComicAfterTime() -> void:

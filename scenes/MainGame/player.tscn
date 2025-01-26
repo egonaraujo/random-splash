@@ -76,12 +76,19 @@ animations = [{
 }]
 
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("WaveVFX")]
-collision_mask = 30
+collision_mask = 62
 physics_material_override = SubResource("PhysicsMaterial_cn5lh")
 gravity_scale = 0.0
 linear_damp = 0.25
 script = ExtResource("1_qmsfi")
+power = 150.0
+minRadius = 80.0
+maxRadius = 300.0
 oxygenLossPerSec = 1.2
+minPushCooldown = 10000.0
+maxPushCooldown = 10000.0
+pushStrength = 0.0
+pushDuration = 0.0
 WaveVFX = NodePath("GPUParticles2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -99,7 +106,7 @@ z_as_relative = false
 texture = ExtResource("3_p3e72")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.7, 0.7)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
