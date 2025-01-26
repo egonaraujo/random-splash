@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd2wmljmibo22"]
+[gd_scene load_steps=11 format=3 uid="uid://dd2wmljmibo22"]
 
 [ext_resource type="Script" path="res://scenes/MainGame/player.gd" id="1_qmsfi"]
 [ext_resource type="Texture2D" uid="uid://clbnjll3epv0j" path="res://scenes/MainGame/Sprites/Bolha.png" id="2_rbkmd"]
 [ext_resource type="Texture2D" uid="uid://cevxarn72scd7" path="res://scenes/MainGame/Sprites/Bolhas.png" id="3_p3e72"]
 [ext_resource type="Texture2D" uid="uid://bjqbu5piwp661" path="res://scenes/MainGame/Sprites/Capivara.png" id="4_gmbs1"]
 [ext_resource type="Texture2D" uid="uid://c7voesmb2ltm5" path="res://scenes/MainGame/Light/lightTexture.png" id="5_t0j5u"]
+[ext_resource type="AudioStream" uid="uid://b1t88amcyudql" path="res://SFX/MovingSound.wav" id="6_51f74"]
+[ext_resource type="AudioStream" uid="uid://g4drd001bsgc" path="res://SFX/HitDying.mp3" id="7_rcu5y"]
+[ext_resource type="AudioStream" uid="uid://yk1xwlglrm46" path="res://SFX/HitInvincible.mp3" id="8_duq6i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cn5lh"]
 friction = 0.09
@@ -50,5 +53,16 @@ texture = ExtResource("4_gmbs1")
 scale = Vector2(8.80208, 8.80208)
 shadow_enabled = true
 texture = ExtResource("5_t0j5u")
+
+[node name="MoveAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_51f74")
+autoplay = true
+stream_paused = true
+
+[node name="HitAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rcu5y")
+
+[node name="InvincibleHitAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_duq6i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

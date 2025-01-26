@@ -6,6 +6,9 @@ var playerTimer:float = 0
 var latestCheckpoint:Checkpoint = null
 var collectedPowerups = []
 
+const powerupOffset := Vector2(100000,100000)
+var just_died := true #first checkpoing should not display audio
+
 func _ready() -> void:
 	playerTimer = 0
 	for child in get_children():
@@ -19,21 +22,28 @@ func _ready() -> void:
 func _on_player_player_died() -> void:
 	($Player as Player).gainOxygen(100)
 	$Player.reset(latestCheckpoint.global_position)
+	resetPowerups()
+	just_died = true
+
+func resetPowerups() -> void:
 	for powerup in collectedPowerups:
-		powerup.show()
-		powerup.set_physics_process(true)
+		powerup.position -= powerupOffset
+	collectedPowerups.clear()
 
 func _process(delta: float) -> void:
 	playerTimer += delta
 
 func _on_checkpoint_player_entered_checkpoint(checkpoint: Checkpoint) -> void:
 	latestCheckpoint = checkpoint
+	if !just_died:
+		$HealingAudioPlayer.play()
+	just_died = false
 
 func _on_powerup_collected(powerup: Invincibility) -> void:
 	collectedPowerups.append(powerup)
-	powerup.hide()
-	powerup.set_physics_process(false)
+	powerup.position += powerupOffset
+	$PowerupAudioPlayer.play()
 
 func _on_player_win() -> void:
 	PlayerData.time = playerTimer
-	get_tree().change_scene_to_file("res://scenes/VictoryScreen/VictoryScreen.tscn")
+	get_tree().change_scene_to_file.bind("res://scenes/VictoryScreen/VictoryScreen.tscn").call_deferred()

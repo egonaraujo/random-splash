@@ -76,8 +76,10 @@ func processInput() -> void:
 		
 		# Does not have an effect if bigger than max radius
 		if direction.length() > maxRadius:
+			$MoveAudioPlayer.stream_paused = true
 			return
 		
+		$MoveAudioPlayer.stream_paused = false
 		var distance = clamp(direction.length(), minRadius, maxRadius)
 		
 		# if close to max, close to 0, if close to min, close to power
@@ -85,6 +87,8 @@ func processInput() -> void:
 		var boostStrength = remap(distance, minRadius, maxRadius, 1, 0)
 		var boost = direction.normalized() * power * boostStrength
 		apply_central_force(boost)
+	else:
+		$MoveAudioPlayer.stream_paused = true
 
 func processRandomMovement(delta:float) -> void:
 	randomPushTimer -= delta
@@ -106,17 +110,21 @@ func _on_body_entered(body: Node) -> void:
 	match physicsBody.collision_layer:
 		Enums.CollisionLayers.Walls:
 			if IsInvincible():
+				$InvincibleHitAudioPlayer.play()
 				return
+			$HitAudioPlayer.play()
 			oxygen -= oxygenLossPerImpact
 
 		Enums.CollisionLayers.Killer:
 			if IsInvincible():
+				$InvincibleHitAudioPlayer.play()
 				return
+			$HitAudioPlayer.play()
 			oxygen = 0
 	processOxygen(0)
 
 func gainOxygen(amount: float) -> void:
-	oxygen = clamp(oxygen + amount,-10, 100)	
+	oxygen = clamp(oxygen + amount,-10, 100)
 	processOxygen(0)
 
 func grantInvincibility(time: float) -> void:
