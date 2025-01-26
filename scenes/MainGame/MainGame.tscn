@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdavaijubluxx"]
+[gd_scene load_steps=17 format=3 uid="uid://bdavaijubluxx"]
 
 [ext_resource type="Texture2D" uid="uid://c7dl8yypj3df4" path="res://shapes/square.png" id="1_h88lo"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_hfcji"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://pjs7qa53qkjt" path="res://scenes/MainGame/Powerups/invincibility.tscn" id="9_x78ee"]
 [ext_resource type="PackedScene" uid="uid://dyn03xcy6xi02" path="res://scenes/MainGame/checkpoint.tscn" id="10_3u2ke"]
 [ext_resource type="PackedScene" uid="uid://bt1jrl2phcnew" path="res://scenes/MainGame/final_target.tscn" id="11_41khd"]
+[ext_resource type="AudioStream" uid="uid://c6wxmpdpcojwa" path="res://SFX/MainThemeMusic.wav" id="12_b1q7t"]
+[ext_resource type="AudioStream" uid="uid://tpdjjoilotuk" path="res://SFX/PowerUp.wav" id="13_b5t2p"]
+[ext_resource type="AudioStream" uid="uid://spv5g17i1rg2" path="res://SFX/BolhaEnchendo.wav" id="14_spai6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnil1"]
 radius = 237.034
@@ -132,7 +135,7 @@ rotation = 1.39149
 shape = SubResource("CapsuleShape2D_aviu0")
 
 [node name="Player" parent="." instance=ExtResource("4_52etk")]
-position = Vector2(628, 699)
+position = Vector2(499, 783)
 
 [node name="PushField" parent="." instance=ExtResource("6_v4tyl")]
 position = Vector2(1337.22, 561.396)
@@ -158,9 +161,20 @@ position = Vector2(1129, 612)
 position = Vector2(555, -176)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("10_3u2ke")]
-position = Vector2(842, 657)
+position = Vector2(505, 782)
 
 [node name="FinalTarget" parent="." instance=ExtResource("11_41khd")]
 position = Vector2(594, 387)
+
+[node name="MusicAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_b1q7t")
+volume_db = -3.0
+autoplay = true
+
+[node name="PowerupAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_b5t2p")
+
+[node name="HealingAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_spai6")
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]

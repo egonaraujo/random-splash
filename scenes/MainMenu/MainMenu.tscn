@@ -1,13 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhcwrdljag3ty"]
+[gd_scene load_steps=8 format=3 uid="uid://dhcwrdljag3ty"]
 
-[ext_resource type="Texture2D" uid="uid://c7dl8yypj3df4" path="res://shapes/square.png" id="1_bp64k"]
 [ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="1_kq0tu"]
-[ext_resource type="Texture2D" uid="uid://b004vpnxwkb0q" path="res://UI/StartButton.png" id="3_r18os"]
-[ext_resource type="Texture2D" uid="uid://5t65fchlekmu" path="res://UI/MusicOnOff.png" id="4_i1m3e"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_bcmav"]
-font_size = 50
-font_color = Color(0.0253638, 0.0253638, 0.0253638, 1)
+[ext_resource type="Texture2D" uid="uid://b84h52m0yjoa0" path="res://UI/MainMenu/MenuBG.png" id="2_7rgoi"]
+[ext_resource type="Texture2D" uid="uid://b004vpnxwkb0q" path="res://UI/MainMenu/StartButton.png" id="3_r18os"]
+[ext_resource type="Texture2D" uid="uid://5t65fchlekmu" path="res://UI/MainMenu/MusicOnOff.png" id="4_i1m3e"]
+[ext_resource type="AudioStream" uid="uid://bxykpeo2kul51" path="res://SFX/MenuMusic.wav" id="5_lf6c7"]
+[ext_resource type="Texture2D" uid="uid://03lh6jl8rhgy" path="res://UI/MainMenu/MenuTitle.png" id="6_hne1u"]
+[ext_resource type="Texture2D" uid="uid://dcvdyg3jib0d7" path="res://UI/MainMenu/MenuCapy.png" id="7_v8uiv"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,30 +19,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_kq0tu")
 
-[node name="Background" type="Sprite2D" parent="."]
-self_modulate = Color(0.230272, 0.635105, 0.704183, 1)
-position = Vector2(960, 532)
-scale = Vector2(1.07217, 0.611059)
-texture = ExtResource("1_bp64k")
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 348.0
-grow_horizontal = 2
-
-[node name="Label" type="Label" parent="CenterContainer"]
-layout_mode = 2
-text = "Bubble Capy
-"
-label_settings = SubResource("LabelSettings_bcmav")
+[node name="MenuBg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.00833, 1.01481)
+texture = ExtResource("2_7rgoi")
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 312.0
+offset_top = 592.0
+offset_right = -536.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 
@@ -63,6 +49,20 @@ layout_mode = 2
 texture_normal = ExtResource("4_i1m3e")
 texture_pressed = ExtResource("4_i1m3e")
 stretch_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lf6c7")
+autoplay = true
+
+[node name="MenuTitle" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.00833, 1.01481)
+texture = ExtResource("6_hne1u")
+
+[node name="MenuCapy" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.00833, 1.01481)
+texture = ExtResource("7_v8uiv")
 
 [connection signal="button_down" from="CenterContainer2/VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="CenterContainer2/VBoxContainer/MusicButton" to="." method="_on_music_button_button_down"]
