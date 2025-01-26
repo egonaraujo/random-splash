@@ -20,7 +20,6 @@ func _ready() -> void:
 			(child as FinalTarget).player_reached_target.connect(_on_player_win)
 
 func _on_player_player_died() -> void:
-	($Player as Player).gainOxygen(100)
 	$Player.reset(latestCheckpoint.global_position)
 	resetPowerups()
 	just_died = true

@@ -30,6 +30,7 @@ var queue_reset: bool = false
 var randomPushTimer:float = 0
 var isPushing: bool = false
 var pushDirection: Vector2 = Vector2.ZERO
+var resetPos:Vector2 = Vector2.ZERO
 
 func IsInvincible() -> bool: return invincibilityTimer > 0
 
@@ -40,6 +41,8 @@ func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 1
 	randomPushTimer = randf_range(minPushCooldown, maxPushCooldown)
+	resetPos = global_position
+	reset_player_visual()
 
 func _physics_process(delta: float) -> void:
 	processPowerups(delta)
@@ -132,12 +135,15 @@ func grantInvincibility(time: float) -> void:
 	$Sprite.self_modulate = Color(0.36,0.36,0.36,1.0)
 
 func reset(global_pos:Vector2) -> void:
-	oxygen = 100
 	reset_physics_interpolation()
-	invincibilityTimer = 0
-	processOxygen(0)
-	global_position = global_pos
 	queue_reset = true
+	resetPos = global_pos
+	$AnimatedDying.global_rotation = 0
+	$AnimatedDying.show()
+	$Capivara.hide()
+	$Sprite.hide()
+	$AnimatedDying.play("Dying")
+	$AnimatedDying.animation_finished.connect(reset_player_visual)
 	
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if queue_reset:
@@ -145,3 +151,13 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.angular_velocity = 0
 		state.transform = transform
 		queue_reset = false
+
+func reset_player_visual() -> void:
+	oxygen = 100
+	processOxygen(0)
+	invincibilityTimer = 0
+	$AnimatedDying.frame = 0
+	$Capivara.show()
+	$Sprite.show()
+	$AnimatedDying.hide()
+	global_position = resetPos

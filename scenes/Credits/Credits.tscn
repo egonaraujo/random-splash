@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcemre3eiyu7f"]
+
+[ext_resource type="Script" path="res://Utils/ControlTapToClose.gd" id="1_th1l2"]
+[ext_resource type="PackedScene" uid="uid://dhcwrdljag3ty" path="res://scenes/MainMenu/MainMenu.tscn" id="2_7vdcw"]
+[ext_resource type="Texture2D" uid="uid://cucftgu0lc182" path="res://UI/Credits/Credits.png" id="2_g5rg7"]
+[ext_resource type="AudioStream" uid="uid://bxykpeo2kul51" path="res://SFX/MenuMusic.wav" id="4_cws6m"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_th1l2")
+targetScene = ExtResource("2_7vdcw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g5rg7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cws6m")
+autoplay = true
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_gui_input"]
