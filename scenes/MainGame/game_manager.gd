@@ -12,7 +12,6 @@ func _ready() -> void:
 		if child is Checkpoint:
 			(child as Checkpoint).player_entered_checkpoint.connect(_on_checkpoint_player_entered_checkpoint)
 		if child is Invincibility:
-			print(" ffound child invincibility")
 			(child as Invincibility).powerup_collected.connect(_on_powerup_collected)
 
 func _on_player_player_died() -> void:

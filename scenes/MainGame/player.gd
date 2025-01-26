@@ -2,6 +2,7 @@ extends RigidBody2D
 
 class_name Player
 
+# Exported region
 @export_group("Click Input")
 @export var power : float = 100
 @export var minRadius : float = 50
@@ -12,12 +13,23 @@ class_name Player
 @export var oxygenLossPerSec: float = 0.5
 @export var oxygenLossPerImpact: float = 20
 
+@export_group("Random movement")
+@export var minPushCooldown : float = 2
+@export var maxPushCooldown : float = 8
+@export var pushStrength : float = 15
+@export var pushDuration : float = 2
+
+# On Ready Region
 @onready var originalSpriteScale:Vector2 = $Sprite.scale
 @onready var originalColliderScale:Vector2 = $CollisionShape2D.scale
 
 var invincibilityTimer:float = 0
 var bubbleRotationAnimation:float = 0.12
 var queue_reset: bool = false
+
+var randomPushTimer:float = 0
+var isPushing: bool = false
+var pushDirection: Vector2 = Vector2.ZERO
 
 func IsInvincible() -> bool: return invincibilityTimer > 0
 
@@ -27,11 +39,13 @@ signal player_died()
 func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 1
+	randomPushTimer = randf_range(minPushCooldown, maxPushCooldown)
 
 func _physics_process(delta: float) -> void:
 	processPowerups(delta)
 	processOxygen(delta)
 	processInput()
+	processRandomMovement(delta)
 	$Sprite.rotate(bubbleRotationAnimation*delta)
 	$Capivara.rotate(bubbleRotationAnimation*delta * -1)
 	if ($Sprite.rotation > 0.11 or $Sprite.rotation < -0.11):
@@ -70,6 +84,20 @@ func processInput() -> void:
 		# ease to make the force logarithmic instead of lin
 		var boostStrength = remap(distance, minRadius, maxRadius, 1, 0)
 		var boost = direction.normalized() * power * boostStrength
+		apply_central_force(boost)
+
+func processRandomMovement(delta:float) -> void:
+	randomPushTimer -= delta
+	if randomPushTimer <= 0:
+		if isPushing:
+			isPushing = false
+			randomPushTimer = randf_range(minPushCooldown, maxPushCooldown)
+		else:
+			isPushing = true
+			randomPushTimer = pushDuration
+			pushDirection = Vector2(randf()-0.5, randf()-0.5).normalized()
+	elif isPushing:
+		var boost = pushDirection.normalized() * pushStrength
 		apply_central_force(boost)
 
 func _on_body_entered(body: Node) -> void:
