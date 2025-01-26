@@ -46,7 +46,7 @@ func _ready() -> void:
 	randomPushTimer = randf_range(minPushCooldown, maxPushCooldown)
 	resetPos = global_position
 	reset_player_visual()
-	#WaveVFX.emitting = false;
+	WaveVFX.emitting = false;
 
 func _physics_process(delta: float) -> void:
 	processPowerups(delta)
@@ -95,8 +95,8 @@ func processInput() -> void:
 		var boost = direction.normalized() * power * boostStrength
 		
 		#enable particle
-		#WaveVFX.emitting = true;
-		#WaveVFX.position = get_local_mouse_position();
+		WaveVFX.emitting = true;
+		WaveVFX.position = get_local_mouse_position();
 		
 		apply_central_force(boost)
 		
@@ -176,3 +176,5 @@ func reset_player_visual() -> void:
 	$Sprite.show()
 	$AnimatedDying.hide()
 	global_position = resetPos
+
+ 

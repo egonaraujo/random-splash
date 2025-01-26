@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dd2wmljmibo22"]
+[gd_scene load_steps=21 format=3 uid="uid://dd2wmljmibo22"]
 
 [ext_resource type="Script" path="res://scenes/MainGame/player.gd" id="1_qmsfi"]
 [ext_resource type="Texture2D" uid="uid://clbnjll3epv0j" path="res://scenes/MainGame/Sprites/Bolha.png" id="2_rbkmd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7voesmb2ltm5" path="res://scenes/MainGame/Light/lightTexture.png" id="5_t0j5u"]
 [ext_resource type="AudioStream" uid="uid://b1t88amcyudql" path="res://SFX/MovingSound.wav" id="6_51f74"]
 [ext_resource type="AudioStream" uid="uid://g4drd001bsgc" path="res://SFX/HitDying.mp3" id="7_rcu5y"]
+[ext_resource type="PackedScene" uid="uid://bq11uk450vdsv" path="res://scenes/MainGame/Mouse/WaveParticle.tscn" id="7_swudt"]
 [ext_resource type="AudioStream" uid="uid://yk1xwlglrm46" path="res://SFX/HitInvincible.mp3" id="8_duq6i"]
 [ext_resource type="Texture2D" uid="uid://cm71suqbbjajq" path="res://scenes/MainGame/Sprites/pop-spritesheet.png" id="9_ls785"]
 
@@ -70,17 +71,18 @@ animations = [{
 "texture": SubResource("AtlasTexture_oykjd")
 }],
 "loop": false,
-"name": &"default",
+"name": &"Dying",
 "speed": 7.0
 }]
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("WaveVFX")]
 collision_mask = 30
 physics_material_override = SubResource("PhysicsMaterial_cn5lh")
 gravity_scale = 0.0
 linear_damp = 0.25
 script = ExtResource("1_qmsfi")
 oxygenLossPerSec = 1.2
+WaveVFX = NodePath("GPUParticles2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oyuue")
@@ -117,6 +119,11 @@ texture = ExtResource("5_t0j5u")
 visible = false
 scale = Vector2(0.45, 0.45)
 sprite_frames = SubResource("SpriteFrames_ss5ht")
+animation = &"Dying"
+frame = 6
+frame_progress = 1.0
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("7_swudt")]
 
 [node name="MoveAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_51f74")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://oqwbwjsytwgh"]
+[gd_scene load_steps=30 format=4 uid="uid://oqwbwjsytwgh"]
 
 [ext_resource type="PackedScene" uid="uid://dhcr7rjn3fvhx" path="res://shapes/Wall.tscn" id="1_oguch"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_sb0gj"]
@@ -18,6 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://uwuybmobp5qx" path="res://scenes/Layout/Background/tiny tilemaking.png" id="14_hpn4x"]
 [ext_resource type="Texture2D" uid="uid://q2tl34qm27yu" path="res://scenes/Layout/Pontos/3-Gibiteca.png" id="15_niwpl"]
 [ext_resource type="Texture2D" uid="uid://b0s3uw2p4jvc1" path="res://scenes/Layout/Pontos/5-Parque Barigui.png" id="16_avjap"]
+[ext_resource type="PackedScene" uid="uid://dyn03xcy6xi02" path="res://scenes/MainGame/checkpoint.tscn" id="19_cg2ll"]
+[ext_resource type="PackedScene" uid="uid://bt1jrl2phcnew" path="res://scenes/MainGame/final_target.tscn" id="20_w77fl"]
+[ext_resource type="AudioStream" uid="uid://c6wxmpdpcojwa" path="res://SFX/MainThemeMusic.wav" id="21_iof7r"]
+[ext_resource type="AudioStream" uid="uid://tpdjjoilotuk" path="res://SFX/PowerUp.wav" id="22_w8vn4"]
+[ext_resource type="AudioStream" uid="uid://spv5g17i1rg2" path="res://SFX/BolhaEnchendo.wav" id="23_j182b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a52m6"]
 texture = ExtResource("14_hpn4x")
@@ -668,15 +673,11 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_n45l3")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wnjs"]
-size = Vector2(453.5, 468)
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cn5lh"]
 friction = 0.09
 bounce = 0.5
 
 [node name="GameLayout" type="Node2D"]
-position = Vector2(-7075, -464)
 script = ExtResource("1_sb0gj")
 
 [node name="Map" type="Node" parent="."]
@@ -2662,6 +2663,81 @@ position = Vector2(29321, 255)
 rotation = -0.328786
 scale = Vector2(0.5, 0.5)
 
+[node name="Wall349" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(30061, -103)
+rotation = -1.5146
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall350" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(26503, -63.0001)
+rotation = -1.5146
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall351" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(18469, -90.9999)
+rotation = -1.28859
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall352" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(15311, -62.9999)
+rotation = -1.51331
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall353" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(8170, -152)
+rotation = -1.51331
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall354" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(7993, -371)
+rotation = -2.2504
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall355" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(6042, -137)
+rotation = -3.03396
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall356" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(5906, -313)
+rotation = -1.58178
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall357" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(735, 278)
+rotation = -1.58178
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall358" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(756, 125)
+rotation = -1.58178
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall359" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(-115, 168)
+rotation = -1.58178
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall360" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(-115, 300)
+rotation = -1.58178
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall361" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(-111, -111)
+rotation = -3.14635
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall362" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(199, -120)
+rotation = -3.14635
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall363" parent="Props" instance=ExtResource("1_oguch")]
+position = Vector2(542, -111)
+rotation = -3.14635
+scale = Vector2(0.5, 0.5)
+
 [node name="Wall347" parent="Props" instance=ExtResource("1_oguch")]
 position = Vector2(29575, 268)
 rotation = -0.0831288
@@ -2896,6 +2972,9 @@ rotation = -2.30894
 position = Vector2(10266, 2376)
 rotation = -3.14581
 
+[node name="Spikes50" parent="Props" instance=ExtResource("5_pqnm0")]
+position = Vector2(311, 1117)
+
 [node name="Tilemaps" type="Node" parent="."]
 
 [node name="WaterBackground" parent="Tilemaps" instance=ExtResource("3_i4vut")]
@@ -2949,69 +3028,35 @@ texture = ExtResource("16_avjap")
 
 [node name="Colliders" type="Node" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Colliders"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Colliders"]
-position = Vector2(1142, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D2"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Colliders"]
-position = Vector2(6294, -482)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D3"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Colliders"]
-position = Vector2(8569, -394)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Colliders"]
-position = Vector2(8433, -642)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D5"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="Colliders"]
-position = Vector2(15367, -241)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D6"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="Colliders"]
-position = Vector2(18927, -253)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D7"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="Colliders"]
-position = Vector2(26623, -504)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D8"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
-[node name="StaticBody2D9" type="StaticBody2D" parent="Colliders"]
-position = Vector2(30446, -389)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D9"]
-position = Vector2(-264.75, 197)
-shape = SubResource("RectangleShape2D_5wnjs")
-
 [node name="Player" parent="." instance=ExtResource("2_ifi61")]
-position = Vector2(7400, 752)
+position = Vector2(312, 153)
 rotation = -0.0209571
 physics_material_override = SubResource("PhysicsMaterial_cn5lh")
+
+[node name="Checkpoint" parent="." instance=ExtResource("19_cg2ll")]
+position = Vector2(309, 230)
+
+[node name="FinalTarget" parent="." instance=ExtResource("20_w77fl")]
+position = Vector2(27406, 531)
+scale = Vector2(7.94256, -3.40517)
+
+[node name="MusicAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_iof7r")
+volume_db = -3.0
+autoplay = true
+
+[node name="PowerupAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_w8vn4")
+
+[node name="HealingAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_j182b")
+
+[node name="Checkpoint2" parent="." instance=ExtResource("19_cg2ll")]
+position = Vector2(7108, 138)
+scale = Vector2(-36.994, 1.08081)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("19_cg2ll")]
+position = Vector2(16737, 758)
+scale = Vector2(32.9523, -1.82849)
+
+[connection signal="player_died" from="Player" to="." method="_on_player_player_died"]

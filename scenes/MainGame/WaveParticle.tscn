@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://d210rhddcxy8b"]
+
+[ext_resource type="Texture2D" uid="uid://dsurtljy6glsf" path="res://scenes/MainGame/Mouse/MouseTexture.png" id="1_75yh1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5f8ih"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_0qktp"]
+offsets = PackedFloat32Array(0, 0.516393, 1)
+colors = PackedColorArray(0.87451, 0.87451, 0.87451, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wgmii"]
+gradient = SubResource("Gradient_0qktp")
+
+[sub_resource type="Curve" id="Curve_n7m4u"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l7j6l"]
+curve = SubResource("Curve_n7m4u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_emhx7"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_l7j6l")
+color_ramp = SubResource("GradientTexture1D_wgmii")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_5f8ih")
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_emhx7")
+texture = ExtResource("1_75yh1")
+lifetime = 3.0
