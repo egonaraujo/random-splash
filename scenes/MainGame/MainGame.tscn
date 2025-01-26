@@ -138,6 +138,8 @@ shape = SubResource("CapsuleShape2D_aviu0")
 position = Vector2(499, 783)
 
 [node name="PushField" parent="." instance=ExtResource("6_v4tyl")]
+light_mask = 1
+visibility_layer = 1
 position = Vector2(1337.22, 561.396)
 rotation = -3.61249
 scale = Vector2(0.342815, 0.568272)

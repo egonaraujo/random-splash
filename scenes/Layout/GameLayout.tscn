@@ -387,6 +387,8 @@ scale = Vector2(-0.0252552, 0.0628553)
 texture = ExtResource("2_u6qjv")
 
 [node name="Sprite2D" parent="Map" instance=ExtResource("3_plq0r")]
+light_mask = 1
+visibility_layer = 1
 position = Vector2(9025, 1124)
 rotation = -0.164309
 scale = Vector2(1.77693, 1.88458)
@@ -441,6 +443,8 @@ position = Vector2(8428, 642)
 rotation = -0.0209571
 
 [node name="Sprite2D" parent="." instance=ExtResource("3_plq0r")]
+light_mask = 1
+visibility_layer = 1
 position = Vector2(1442, 3391)
 rotation = 3.14159
 direction = Vector2(0, -20)

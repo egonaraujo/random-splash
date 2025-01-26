@@ -27,6 +27,5 @@ func to_time(timeInSec:float) -> String:
 func _on_restart_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/MainMenu/MainMenu.tscn")
 
-func _on_comic_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton && event.is_pressed():
-		$Comic.hide()
+func _on_next_button_button_down() -> void:
+	$Comic.hide()

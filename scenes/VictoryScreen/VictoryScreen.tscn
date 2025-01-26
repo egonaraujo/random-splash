@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4hvr7hgb3gf2"]
+[gd_scene load_steps=8 format=3 uid="uid://c4hvr7hgb3gf2"]
 
 [ext_resource type="Script" path="res://scenes/VictoryScreen/victory_screen.gd" id="1_uvtfi"]
 [ext_resource type="Texture2D" uid="uid://bdpc10b26ifgf" path="res://scenes/VictoryScreen/VictoryBackground.png" id="2_5kjae"]
 [ext_resource type="Texture2D" uid="uid://bqusdauuf1rhe" path="res://scenes/VictoryScreen/VictoryText.png" id="3_tfcmh"]
 [ext_resource type="Texture2D" uid="uid://djs5xf374luhn" path="res://scenes/VictoryScreen/VictoryButton.png" id="4_v1cio"]
 [ext_resource type="Texture2D" uid="uid://8fbko2o5omgm" path="res://scenes/VictoryScreen/FinalComic.png" id="5_n7cqe"]
+[ext_resource type="Texture2D" uid="uid://8cy2ipg3euty" path="res://UI/Flecha.png" id="6_v1w8e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vr4gh"]
 font_size = 66
@@ -82,5 +83,15 @@ grow_vertical = 2
 texture = ExtResource("5_n7cqe")
 stretch_mode = 3
 
+[node name="NextButton" type="TextureButton" parent="Comic"]
+layout_mode = 0
+offset_left = 1736.0
+offset_top = 504.0
+offset_right = 1910.0
+offset_bottom = 656.0
+texture_normal = ExtResource("6_v1w8e")
+ignore_texture_size = true
+stretch_mode = 5
+
 [connection signal="button_down" from="RestartButton" to="." method="_on_restart_button_down"]
-[connection signal="gui_input" from="Comic" to="." method="_on_comic_gui_input"]
+[connection signal="button_down" from="Comic/NextButton" to="." method="_on_next_button_button_down"]
