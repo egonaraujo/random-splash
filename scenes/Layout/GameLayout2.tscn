@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://oqwbwjsytwgh"]
+[gd_scene load_steps=27 format=4 uid="uid://oqwbwjsytwgh"]
 
 [ext_resource type="PackedScene" uid="uid://dhcr7rjn3fvhx" path="res://shapes/Wall.tscn" id="1_oguch"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_sb0gj"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="5_fyf6i"]
 [ext_resource type="PackedScene" uid="uid://py1h1ysumtnb" path="res://scenes/Layout/Spikes/Spikes1.tscn" id="5_pqnm0"]
 [ext_resource type="PackedScene" uid="uid://cer3yu4keeg41" path="res://scenes/Layout/Spikes/Spikes2.tscn" id="6_kg5qo"]
+[ext_resource type="Script" path="res://scenes/MainGame/player.gd" id="8_celug"]
 [ext_resource type="PackedScene" uid="uid://dfbmarxc6sqo6" path="res://scenes/Layout/Background/water/BubblesBackground.tscn" id="11_mmyrs"]
 [ext_resource type="Texture2D" uid="uid://dou8t55p76a08" path="res://scenes/Layout/Background/teste tile 2.png" id="12_jc82y"]
 [ext_resource type="PackedScene" uid="uid://cad87wc0d57y6" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXUp.tscn" id="12_p76xq"]
@@ -670,6 +671,10 @@ sources/0 = SubResource("TileSetAtlasSource_n45l3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wnjs"]
 size = Vector2(453.5, 468)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cn5lh"]
+friction = 0.09
+bounce = 0.5
 
 [node name="GameLayout" type="Node2D"]
 position = Vector2(-7075, -464)
@@ -3012,6 +3017,13 @@ position = Vector2(30446, -389)
 position = Vector2(-264.75, 197)
 shape = SubResource("RectangleShape2D_5wnjs")
 
-[node name="Player" parent="." instance=ExtResource("2_ifi61")]
-position = Vector2(35474, 480)
+[node name="Player" parent="." node_paths=PackedStringArray("WaveVFX") instance=ExtResource("2_ifi61")]
+position = Vector2(7400, 752)
 rotation = -0.0209571
+collision_mask = 30
+physics_material_override = SubResource("PhysicsMaterial_cn5lh")
+gravity_scale = 0.0
+linear_damp = 0.25
+script = ExtResource("8_celug")
+oxygenLossPerSec = 1.2
+WaveVFX = NodePath("GPUParticles2D")
