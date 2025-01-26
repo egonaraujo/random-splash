@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cer3yu4keeg41"]
 
-[ext_resource type="Texture2D" uid="uid://c2x27la5bhjg5" path="res://scenes/Layout/Spikes/Vidros Lixosos 2.png" id="1_63r8p"]
+[ext_resource type="Texture2D" uid="uid://cycb8gs061x88" path="res://scenes/Layout/Spikes/EspinnhosAzuis.png" id="1_uplio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l565o"]
 size = Vector2(420, 149)
@@ -9,11 +9,12 @@ size = Vector2(420, 149)
 
 [node name="VidrosLixosos" type="Sprite2D" parent="."]
 z_index = -1
-texture = ExtResource("1_63r8p")
+texture = ExtResource("1_uplio")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(2, 23)
 shape = SubResource("RectangleShape2D_l565o")

@@ -7,6 +7,8 @@
 size = Vector2(371, 368)
 
 [node name="PushField" type="Sprite2D"]
+light_mask = 0
+visibility_layer = 0
 texture = ExtResource("1_7542q")
 script = ExtResource("1_u0dut")
 
