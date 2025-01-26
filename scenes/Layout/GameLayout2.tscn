@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://oqwbwjsytwgh"]
+[gd_scene load_steps=26 format=4 uid="uid://oqwbwjsytwgh"]
 
 [ext_resource type="PackedScene" uid="uid://dhcr7rjn3fvhx" path="res://shapes/Wall.tscn" id="1_oguch"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_sb0gj"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="5_fyf6i"]
 [ext_resource type="PackedScene" uid="uid://py1h1ysumtnb" path="res://scenes/Layout/Spikes/Spikes1.tscn" id="5_pqnm0"]
 [ext_resource type="PackedScene" uid="uid://cer3yu4keeg41" path="res://scenes/Layout/Spikes/Spikes2.tscn" id="6_kg5qo"]
-[ext_resource type="Script" path="res://scenes/MainGame/player.gd" id="8_celug"]
 [ext_resource type="PackedScene" uid="uid://dfbmarxc6sqo6" path="res://scenes/Layout/Background/water/BubblesBackground.tscn" id="11_mmyrs"]
 [ext_resource type="Texture2D" uid="uid://dou8t55p76a08" path="res://scenes/Layout/Background/teste tile 2.png" id="12_jc82y"]
 [ext_resource type="PackedScene" uid="uid://cad87wc0d57y6" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXUp.tscn" id="12_p76xq"]
@@ -2767,7 +2766,6 @@ rotation = 0.810036
 [node name="Spikes18" parent="Props" instance=ExtResource("6_kg5qo")]
 position = Vector2(18523, 4170)
 rotation = 1.61489
-scale = Vector2(1, 1)
 
 [node name="Spikes19" parent="Props" instance=ExtResource("6_kg5qo")]
 position = Vector2(19839, 2871)
@@ -2780,7 +2778,6 @@ rotation = 2.52031
 [node name="Spikes21" parent="Props" instance=ExtResource("6_kg5qo")]
 position = Vector2(20653, 3257)
 rotation = -1.24107
-scale = Vector2(1, 1)
 
 [node name="Spikes22" parent="Props" instance=ExtResource("6_kg5qo")]
 position = Vector2(20598, 3606)
@@ -2813,7 +2810,6 @@ rotation = -0.384011
 [node name="Spikes29" parent="Props" instance=ExtResource("5_pqnm0")]
 position = Vector2(21225, 5340)
 rotation = -0.450655
-scale = Vector2(1, 1)
 
 [node name="Spikes30" parent="Props" instance=ExtResource("5_pqnm0")]
 position = Vector2(21388, 5229)
@@ -2834,7 +2830,6 @@ rotation = -0.0780103
 [node name="Spikes34" parent="Props" instance=ExtResource("6_kg5qo")]
 position = Vector2(23183, 4009)
 rotation = 1.87202
-scale = Vector2(1, 1)
 
 [node name="Spikes35" parent="Props" instance=ExtResource("6_kg5qo")]
 position = Vector2(23214, 3621)
@@ -2843,7 +2838,6 @@ rotation = 1.23168
 [node name="Spikes36" parent="Props" instance=ExtResource("5_pqnm0")]
 position = Vector2(23223, 3292)
 rotation = 1.39348
-scale = Vector2(1, 1)
 
 [node name="Spikes37" parent="Props" instance=ExtResource("5_pqnm0")]
 position = Vector2(23094, 3073)
@@ -3017,13 +3011,7 @@ position = Vector2(30446, -389)
 position = Vector2(-264.75, 197)
 shape = SubResource("RectangleShape2D_5wnjs")
 
-[node name="Player" parent="." node_paths=PackedStringArray("WaveVFX") instance=ExtResource("2_ifi61")]
+[node name="Player" parent="." instance=ExtResource("2_ifi61")]
 position = Vector2(7400, 752)
 rotation = -0.0209571
-collision_mask = 30
 physics_material_override = SubResource("PhysicsMaterial_cn5lh")
-gravity_scale = 0.0
-linear_damp = 0.25
-script = ExtResource("8_celug")
-oxygenLossPerSec = 1.2
-WaveVFX = NodePath("GPUParticles2D")
