@@ -19,6 +19,9 @@ class_name Player
 @export var pushStrength : float = 15
 @export var pushDuration : float = 2
 
+@export_group("VFX")
+@export var WaveVFX : GPUParticles2D;
+
 # On Ready Region
 @onready var originalSpriteScale:Vector2 = $Sprite.scale
 @onready var originalColliderScale:Vector2 = $CollisionShape2D.scale
@@ -40,6 +43,7 @@ func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 1
 	randomPushTimer = randf_range(minPushCooldown, maxPushCooldown)
+	WaveVFX.emitting = false;
 
 func _physics_process(delta: float) -> void:
 	processPowerups(delta)
@@ -86,9 +90,20 @@ func processInput() -> void:
 		# ease to make the force logarithmic instead of lin
 		var boostStrength = remap(distance, minRadius, maxRadius, 1, 0)
 		var boost = direction.normalized() * power * boostStrength
+		
+		#enable particle
+		WaveVFX.emitting = true;
+		WaveVFX.position = get_local_mouse_position();
+		
 		apply_central_force(boost)
+		
 	else:
 		$MoveAudioPlayer.stream_paused = true
+		#disable particle
+		WaveVFX.emitting=false;
+		
+		
+		 
 
 func processRandomMovement(delta:float) -> void:
 	randomPushTimer -= delta
