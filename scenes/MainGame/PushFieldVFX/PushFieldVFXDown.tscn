@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg7cjtplm1jhd"]
+
+[ext_resource type="Texture2D" uid="uid://clbnjll3epv0j" path="res://scenes/MainGame/Sprites/Bolha.png" id="1_6rft5"]
+
+[sub_resource type="Gradient" id="Gradient_j06lm"]
+offsets = PackedFloat32Array(0, 0.729508, 1)
+colors = PackedColorArray(0.795082, 0.795082, 0.795082, 1, 0.886275, 0.886275, 0.886275, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0ba24"]
+gradient = SubResource("Gradient_j06lm")
+
+[sub_resource type="Curve" id="Curve_2ubmn"]
+max_value = 2.0
+_data = [Vector2(0, 1.31868), 0.0, 0.0, 0, 0, Vector2(0.486667, 0.703297), -0.433777, -0.433777, 0, 0, Vector2(1, 0.0879121), -2.9304, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_q18gn"]
+curve = SubResource("Curve_2ubmn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g7vfu"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 134.85
+gravity = Vector3(0, 398, 0)
+linear_accel_min = -58.25
+linear_accel_max = -2.23517e-06
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_q18gn")
+color_ramp = SubResource("GradientTexture1D_0ba24")
+turbulence_enabled = true
+turbulence_noise_scale = 3.71
+turbulence_noise_speed = Vector3(5, 0, 0)
+turbulence_influence_min = 0.048
+turbulence_influence_max = 0.061
+
+[node name="PushFieldVfx" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_g7vfu")
+texture = ExtResource("1_6rft5")
+lifetime = 5.0

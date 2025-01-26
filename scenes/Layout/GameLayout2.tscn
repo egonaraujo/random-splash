@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://oqwbwjsytwgh"]
+[gd_scene load_steps=14 format=3 uid="uid://oqwbwjsytwgh"]
 
 [ext_resource type="PackedScene" uid="uid://dhcr7rjn3fvhx" path="res://shapes/Wall.tscn" id="1_oguch"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_sb0gj"]
 [ext_resource type="PackedScene" uid="uid://dd2wmljmibo22" path="res://scenes/MainGame/player.tscn" id="2_ifi61"]
+[ext_resource type="PackedScene" uid="uid://cg7cjtplm1jhd" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXDown.tscn" id="3_34xj6"]
+[ext_resource type="PackedScene" uid="uid://b4vau2ut2okvq" path="res://scenes/Layout/Background/water/WaterBackground.tscn" id="3_i4vut"]
 [ext_resource type="PackedScene" uid="uid://c8ynp2rpf5vf6" path="res://scenes/MainGame/PushField.tscn" id="3_plq0r"]
 [ext_resource type="PackedScene" uid="uid://lj1ye2taylqp" path="res://scenes/MainGame/Obstacles/peixe.tscn" id="5_fyf6i"]
 [ext_resource type="PackedScene" uid="uid://py1h1ysumtnb" path="res://scenes/Layout/Spikes/Spikes1.tscn" id="5_pqnm0"]
 [ext_resource type="PackedScene" uid="uid://cer3yu4keeg41" path="res://scenes/Layout/Spikes/Spikes2.tscn" id="6_kg5qo"]
 [ext_resource type="Texture2D" uid="uid://c2x27la5bhjg5" path="res://scenes/Layout/Spikes/Vidros Lixosos 2.png" id="8_lsnjr"]
 [ext_resource type="Texture2D" uid="uid://dkidxtbw5rkw1" path="res://scenes/Layout/Spikes/Vidros Lixosos.png" id="9_pxtad"]
+[ext_resource type="PackedScene" uid="uid://dfbmarxc6sqo6" path="res://scenes/Layout/Background/water/BubblesBackground.tscn" id="11_mmyrs"]
+[ext_resource type="PackedScene" uid="uid://cad87wc0d57y6" path="res://scenes/MainGame/PushFieldVFX/PushFieldVFXUp.tscn" id="12_p76xq"]
 
 [node name="GameLayout" type="Node2D"]
 position = Vector2(-7075, -464)
@@ -29,12 +33,6 @@ scale = Vector2(1.77693, 1.88458)
 direction = Vector2(0, 1)
 force = 50.0
 
-[node name="Sprite2D4" parent="Map" instance=ExtResource("3_plq0r")]
-position = Vector2(8854, 2612)
-rotation = -1.57863
-scale = Vector2(1.77693, 1.88458)
-direction = Vector2(0, 1)
-
 [node name="Sprite2D2" parent="Map" instance=ExtResource("3_plq0r")]
 position = Vector2(16899, -143)
 rotation = -0.0102374
@@ -54,6 +52,24 @@ rotation = 3.13152
 scale = Vector2(4.96005, 1.95144)
 direction = Vector2(0, -1)
 force = 20.0
+
+[node name="PushFieldVfx" parent="Map" instance=ExtResource("3_34xj6")]
+position = Vector2(9184, 565)
+
+[node name="PushFieldVfx2" parent="Map" instance=ExtResource("3_34xj6")]
+position = Vector2(8867, 433)
+
+[node name="PushFieldVfx3" parent="Map" instance=ExtResource("12_p76xq")]
+position = Vector2(20473, 5444)
+
+[node name="PushFieldVfx4" parent="Map" instance=ExtResource("12_p76xq")]
+position = Vector2(19040, 5376)
+
+[node name="PushFieldVfx5" parent="Map" instance=ExtResource("12_p76xq")]
+position = Vector2(19304, 5387)
+
+[node name="PushFieldVfx6" parent="Map" instance=ExtResource("12_p76xq")]
+position = Vector2(20167, 5401)
 
 [node name="Player" parent="." instance=ExtResource("2_ifi61")]
 position = Vector2(7440, 1238)
@@ -1394,117 +1410,139 @@ rotation = -0.268611
 position = Vector2(14554, 4123)
 rotation = -0.268611
 
-[node name="VidrosLixosos2" type="Sprite2D" parent="."]
-position = Vector2(17119, 2810)
+[node name="VidrosLixosos2" type="Sprite2D" parent="Props"]
+position = Vector2(10044, 2346)
 rotation = -2.81442
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos" type="Sprite2D" parent="."]
-position = Vector2(17453, 2906)
-rotation = -3.24854
+[node name="VidrosLixosos" type="Sprite2D" parent="Props"]
+position = Vector2(10378, 2442)
+rotation = 3.03464
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos3" type="Sprite2D" parent="."]
-position = Vector2(27612, 4023)
+[node name="VidrosLixosos3" type="Sprite2D" parent="Props"]
+position = Vector2(20537, 3559)
 rotation = -1.40864
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos4" type="Sprite2D" parent="."]
-position = Vector2(27646, 4303)
+[node name="VidrosLixosos4" type="Sprite2D" parent="Props"]
+position = Vector2(20571, 3839)
 rotation = -1.95153
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos17" type="Sprite2D" parent="."]
-position = Vector2(28108, 5843)
+[node name="VidrosLixosos17" type="Sprite2D" parent="Props"]
+position = Vector2(21033, 5379)
 rotation = -0.212827
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos18" type="Sprite2D" parent="."]
-position = Vector2(28302, 5770)
+[node name="VidrosLixosos18" type="Sprite2D" parent="Props"]
+position = Vector2(21227, 5306)
 rotation = -0.862282
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos19" type="Sprite2D" parent="."]
-position = Vector2(28790, 5061)
-rotation = -3.4069
+[node name="VidrosLixosos19" type="Sprite2D" parent="Props"]
+position = Vector2(21715, 4597)
+rotation = 2.87628
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos20" type="Sprite2D" parent="."]
-position = Vector2(29007, 5093)
+[node name="VidrosLixosos20" type="Sprite2D" parent="Props"]
+position = Vector2(21932, 4629)
 rotation = -2.56591
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos21" type="Sprite2D" parent="."]
-position = Vector2(30368, 5794)
+[node name="VidrosLixosos21" type="Sprite2D" parent="Props"]
+position = Vector2(23293, 5330)
 rotation = 0.496771
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos22" type="Sprite2D" parent="."]
-position = Vector2(30577, 5908)
+[node name="VidrosLixosos22" type="Sprite2D" parent="Props"]
+position = Vector2(23502, 5444)
 rotation = 0.496771
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos23" type="Sprite2D" parent="."]
-position = Vector2(30854, 5953)
+[node name="VidrosLixosos23" type="Sprite2D" parent="Props"]
+position = Vector2(23779, 5489)
 rotation = 0.208321
 texture = ExtResource("9_pxtad")
 
-[node name="VidrosLixosos5" type="Sprite2D" parent="."]
-position = Vector2(25495, 4266)
+[node name="VidrosLixosos5" type="Sprite2D" parent="Props"]
+position = Vector2(18420, 3802)
 rotation = 1.05928
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos6" type="Sprite2D" parent="."]
-position = Vector2(25390, 3871)
+[node name="VidrosLixosos6" type="Sprite2D" parent="Props"]
+position = Vector2(18315, 3407)
 rotation = 1.67198
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos7" type="Sprite2D" parent="."]
-position = Vector2(25585, 4683)
+[node name="VidrosLixosos7" type="Sprite2D" parent="Props"]
+position = Vector2(18510, 4219)
 rotation = 1.67198
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos8" type="Sprite2D" parent="."]
-position = Vector2(26955, 3321)
+[node name="VidrosLixosos8" type="Sprite2D" parent="Props"]
+position = Vector2(19880, 2857)
 rotation = 3.07899
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos9" type="Sprite2D" parent="."]
-position = Vector2(27301, 3194)
+[node name="VidrosLixosos9" type="Sprite2D" parent="Props"]
+position = Vector2(20226, 2730)
 rotation = 2.66432
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos10" type="Sprite2D" parent="."]
-position = Vector2(26650, 3119)
-rotation = 4.36308
+[node name="VidrosLixosos10" type="Sprite2D" parent="Props"]
+position = Vector2(19575, 2655)
+rotation = -1.9201
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos11" type="Sprite2D" parent="."]
-position = Vector2(27762, 3707)
+[node name="VidrosLixosos11" type="Sprite2D" parent="Props"]
+position = Vector2(20687, 3243)
 rotation = -1.10672
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos12" type="Sprite2D" parent="."]
-position = Vector2(29268, 1987)
+[node name="VidrosLixosos12" type="Sprite2D" parent="Props"]
+position = Vector2(22193, 1523)
 rotation = 3.00294
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos13" type="Sprite2D" parent="."]
-position = Vector2(29663, 2029)
-rotation = 3.36073
+[node name="VidrosLixosos13" type="Sprite2D" parent="Props"]
+position = Vector2(22588, 1565)
+rotation = -2.92246
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos14" type="Sprite2D" parent="."]
-position = Vector2(30050, 2176)
-rotation = 3.53389
+[node name="VidrosLixosos14" type="Sprite2D" parent="Props"]
+position = Vector2(22975, 1712)
+rotation = -2.7493
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos15" type="Sprite2D" parent="."]
-position = Vector2(30314, 2435)
-rotation = 4.05664
+[node name="VidrosLixosos15" type="Sprite2D" parent="Props"]
+position = Vector2(23239, 1971)
+rotation = -2.22655
 texture = ExtResource("8_lsnjr")
 
-[node name="VidrosLixosos16" type="Sprite2D" parent="."]
-position = Vector2(28966, 2200)
+[node name="VidrosLixosos16" type="Sprite2D" parent="Props"]
+position = Vector2(21891, 1736)
 rotation = 2.16384
 texture = ExtResource("8_lsnjr")
+
+[node name="WaterBackground" parent="." instance=ExtResource("3_i4vut")]
+z_index = -10
+position = Vector2(16659, 10294)
+
+[node name="BubblesBackground" parent="." instance=ExtResource("11_mmyrs")]
+position = Vector2(16659, 10294)
+
+[node name="PushFieldVfx" parent="." instance=ExtResource("12_p76xq")]
+position = Vector2(8610, 4115)
+
+[node name="PushFieldVfx2" parent="." instance=ExtResource("12_p76xq")]
+position = Vector2(8426, 4090)
+
+[node name="PushFieldVfx3" parent="." instance=ExtResource("12_p76xq")]
+position = Vector2(8258, 4090)
+
+[node name="PushFieldVfx4" parent="." instance=ExtResource("12_p76xq")]
+position = Vector2(26600, 6026)
+
+[node name="PushFieldVfx5" parent="." instance=ExtResource("12_p76xq")]
+position = Vector2(26910, 5989)
