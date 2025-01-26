@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdavaijubluxx"]
+[gd_scene load_steps=14 format=3 uid="uid://bdavaijubluxx"]
 
 [ext_resource type="Texture2D" uid="uid://c7dl8yypj3df4" path="res://shapes/square.png" id="1_h88lo"]
 [ext_resource type="Script" path="res://scenes/MainGame/game_manager.gd" id="1_hfcji"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dorm1h4qxeub0" path="res://scenes/MainGame/Obstacles/espinho.tscn" id="8_32pr5"]
 [ext_resource type="PackedScene" uid="uid://pjs7qa53qkjt" path="res://scenes/MainGame/Powerups/invincibility.tscn" id="9_x78ee"]
 [ext_resource type="PackedScene" uid="uid://dyn03xcy6xi02" path="res://scenes/MainGame/checkpoint.tscn" id="10_3u2ke"]
+[ext_resource type="PackedScene" uid="uid://bt1jrl2phcnew" path="res://scenes/MainGame/final_target.tscn" id="11_41khd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnil1"]
 radius = 237.034
@@ -158,5 +159,8 @@ position = Vector2(555, -176)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("10_3u2ke")]
 position = Vector2(842, 657)
+
+[node name="FinalTarget" parent="." instance=ExtResource("11_41khd")]
+position = Vector2(594, 387)
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]

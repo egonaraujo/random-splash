@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt1jrl2phcnew"]
+
+[ext_resource type="Script" path="res://scenes/MainGame/final_target.gd" id="1_uoelo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co716"]
+size = Vector2(216, 57)
+
+[node name="FinalTarget" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_uoelo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_co716")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
