@@ -21,7 +21,7 @@ func to_time(timeInSec:float) -> String:
 		finalString += "%02d:" % hours
 	if mins > 0 || hours > 0: #display minutes 0 if hour is > 0
 		finalString +=  "%02d:" % mins
-	finalString += "%05.2f" % timeInSec
+	finalString += "%05.2fs" % timeInSec
 	return finalString
 
 func _on_restart_button_down() -> void:

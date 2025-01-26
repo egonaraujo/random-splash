@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2jsokm7pahlv"]
+
+[ext_resource type="Script" path="res://scenes/Intro/intro.gd" id="1_to2vp"]
+[ext_resource type="Texture2D" uid="uid://dpxvkp5i3xja8" path="res://scenes/Intro/Quadrinho1.png" id="2_y5gow"]
+[ext_resource type="Texture2D" uid="uid://dijueqc06op12" path="res://scenes/Intro/Quadrinho_2.png" id="3_klxmb"]
+[ext_resource type="Texture2D" uid="uid://dh2oxellyq2k4" path="res://shapes/circle.png" id="4_hyna4"]
+[ext_resource type="AudioStream" uid="uid://bxykpeo2kul51" path="res://SFX/MenuMusic.wav" id="5_5hesg"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_to2vp")
+
+[node name="BackgroundRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.051971, 0.051971, 0.0519709, 1)
+
+[node name="Quadrinho1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_y5gow")
+
+[node name="Quadrinho2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_klxmb")
+
+[node name="NextButton" type="TextureButton" parent="."]
+self_modulate = Color(0, 0.650298, 0.492196, 1)
+layout_mode = 0
+offset_left = 1682.0
+offset_top = 432.0
+offset_right = 1856.0
+offset_bottom = 606.0
+texture_normal = ExtResource("4_hyna4")
+texture_pressed = ExtResource("4_hyna4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5hesg")
+autoplay = true
+
+[connection signal="button_down" from="NextButton" to="." method="_on_next_button_down"]

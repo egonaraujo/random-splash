@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhcwrdljag3ty"]
+[gd_scene load_steps=10 format=3 uid="uid://dhcwrdljag3ty"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="1_kq0tu"]
 [ext_resource type="Texture2D" uid="uid://b84h52m0yjoa0" path="res://UI/MainMenu/MenuBG.png" id="2_7rgoi"]
-[ext_resource type="Texture2D" uid="uid://b004vpnxwkb0q" path="res://UI/MainMenu/StartButton.png" id="3_r18os"]
-[ext_resource type="Texture2D" uid="uid://5t65fchlekmu" path="res://UI/MainMenu/MusicOnOff.png" id="4_i1m3e"]
+[ext_resource type="Texture2D" uid="uid://b248r1l4fkg4y" path="res://UI/SoundOFF.png" id="3_yy0ud"]
 [ext_resource type="AudioStream" uid="uid://bxykpeo2kul51" path="res://SFX/MenuMusic.wav" id="5_lf6c7"]
+[ext_resource type="Texture2D" uid="uid://dbjoi6hpfhmj" path="res://UI/Comecar.png" id="6_53o32"]
 [ext_resource type="Texture2D" uid="uid://03lh6jl8rhgy" path="res://UI/MainMenu/MenuTitle.png" id="6_hne1u"]
+[ext_resource type="Texture2D" uid="uid://dc8jw68bicc5e" path="res://UI/SoundON.png" id="7_jmy8j"]
 [ext_resource type="Texture2D" uid="uid://dcvdyg3jib0d7" path="res://UI/MainMenu/MenuCapy.png" id="7_v8uiv"]
+[ext_resource type="Texture2D" uid="uid://kenm81nd4mgc" path="res://UI/Creditos.png" id="8_0u6vb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,6 +20,8 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_kq0tu")
+soundOnTex = ExtResource("7_jmy8j")
+soundOffTex = ExtResource("3_yy0ud")
 
 [node name="MenuBg" type="TextureRect" parent="."]
 layout_mode = 1
@@ -63,32 +67,32 @@ texture = ExtResource("7_v8uiv")
 
 [node name="StartButton" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 80.0
-offset_top = 696.0
-offset_right = 463.0
-offset_bottom = 888.0
-texture_normal = ExtResource("3_r18os")
-texture_pressed = ExtResource("3_r18os")
+offset_left = 256.0
+offset_top = 688.0
+offset_right = 687.0
+offset_bottom = 832.0
+texture_normal = ExtResource("6_53o32")
+texture_pressed = ExtResource("6_53o32")
 stretch_mode = 3
 
 [node name="MusicButton" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 592.0
-offset_top = 696.0
-offset_right = 1060.0
-offset_bottom = 884.0
-texture_normal = ExtResource("4_i1m3e")
-texture_pressed = ExtResource("4_i1m3e")
+offset_left = 968.0
+offset_top = 792.0
+offset_right = 1140.0
+offset_bottom = 928.0
+texture_normal = ExtResource("7_jmy8j")
+texture_pressed = ExtResource("7_jmy8j")
 stretch_mode = 3
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 272.0
-offset_top = 888.0
-offset_right = 740.0
-offset_bottom = 1076.0
-texture_normal = ExtResource("4_i1m3e")
-texture_pressed = ExtResource("4_i1m3e")
+offset_left = 248.0
+offset_top = 848.0
+offset_right = 716.0
+offset_bottom = 1036.0
+texture_normal = ExtResource("8_0u6vb")
+texture_pressed = ExtResource("8_0u6vb")
 stretch_mode = 3
 
 [connection signal="button_down" from="StartButton" to="." method="_on_start_button_button_down"]

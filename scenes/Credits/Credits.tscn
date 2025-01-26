@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcemre3eiyu7f"]
+[gd_scene load_steps=6 format=3 uid="uid://bcemre3eiyu7f"]
 
-[ext_resource type="Script" path="res://Utils/ControlTapToClose.gd" id="1_th1l2"]
+[ext_resource type="Script" path="res://Utils/ControlBackButton.gd" id="1_th1l2"]
 [ext_resource type="PackedScene" uid="uid://dhcwrdljag3ty" path="res://scenes/MainMenu/MainMenu.tscn" id="2_7vdcw"]
 [ext_resource type="Texture2D" uid="uid://cucftgu0lc182" path="res://UI/Credits/Credits.png" id="2_g5rg7"]
 [ext_resource type="AudioStream" uid="uid://bxykpeo2kul51" path="res://SFX/MenuMusic.wav" id="4_cws6m"]
+[ext_resource type="Texture2D" uid="uid://ex0tmqptng78" path="res://UI/Voltar.png" id="5_wn630"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -32,4 +33,15 @@ texture = ExtResource("2_g5rg7")
 stream = ExtResource("4_cws6m")
 autoplay = true
 
+[node name="Voltar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1424.0
+offset_top = 40.0
+offset_right = 1812.0
+offset_bottom = 192.0
+texture_normal = ExtResource("5_wn630")
+texture_pressed = ExtResource("5_wn630")
+stretch_mode = 5
+
 [connection signal="gui_input" from="TextureRect" to="." method="_on_gui_input"]
+[connection signal="button_down" from="Voltar" to="." method="_on_voltar_button_down"]

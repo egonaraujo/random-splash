@@ -84,8 +84,10 @@ power = 170.0
 minRadius = 80.0
 maxRadius = 300.0
 oxygenLossPerSec = 1.2
-pushStrength = 80.0
-pushDuration = 3.0
+minPushCooldown = 10000.0
+maxPushCooldown = 10000.0
+pushStrength = 0.0
+pushDuration = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oyuue")
@@ -121,7 +123,6 @@ texture = ExtResource("5_t0j5u")
 [node name="MoveAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_51f74")
 autoplay = true
-stream_paused = true
 
 [node name="HitAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_rcu5y")
